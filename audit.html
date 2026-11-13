@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AI Opportunity Audit | Clarion AI</title>
+  <meta name="description" content="The AI Opportunity Audit from Clarion AI: in three weeks, know exactly where AI will save your business time and money. Plain language and vendor-neutral. Start with a free AI check-up." />
+  <link rel="icon" href="brand_assets/clarion-mark-transparent.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@112..125,500..800&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ink: '#0E1A2F', slate: '#5A6679', paper: '#F6F9F8', haze: '#DCE6E5',
+            teal: { DEFAULT: '#0F8A8C', deep: '#0B6668', aqua: '#3ECFC3', wash: '#E3F5F2' },
+            off: '#B7C1C6',
+          },
+          fontFamily: { display: ['Archivo', 'system-ui', 'sans-serif'], sans: ['"Public Sans"', 'system-ui', 'sans-serif'] },
+          maxWidth: { wrap: '74rem', copy: '38rem' },
+        },
+      },
+    };
+  </script>
+  <style>
+    :root {
+      --spring: cubic-bezier(.34, 1.56, .64, 1);
+      --out: cubic-bezier(.22, 1, .36, 1);
+      --elev: 0 1px 2px rgba(14,26,47,.05), 0 6px 16px -6px rgba(15,138,140,.12), 0 18px 36px -18px rgba(14,26,47,.14);
+      --float: 0 2px 4px rgba(14,26,47,.05), 0 14px 28px -8px rgba(15,138,140,.18), 0 40px 72px -24px rgba(14,26,47,.28);
+      --sec: 6rem;
+    }
+    @media (min-width: 768px) { :root { --sec: 8.5rem; } }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Public Sans', system-ui, sans-serif; font-size: 1.0625rem; line-height: 1.7; color: #2B3850; background: #F6F9F8; -webkit-font-smoothing: antialiased; }
+    .d { font-family: 'Archivo', system-ui, sans-serif; font-stretch: 118%; font-weight: 750; letter-spacing: -0.03em; line-height: 1.04; color: #0E1A2F; }
+    .sec { padding-block: var(--sec); }
+
+    .m { display: inline-block; width: .875rem; height: .875rem; border-radius: 999px; flex-shrink: 0; }
+    .m-fit { background: #0F8A8C; box-shadow: 0 0 0 3px rgba(62,207,195,.25); }
+    .m-test { background: linear-gradient(90deg, #0F8A8C 50%, transparent 50%); box-shadow: inset 0 0 0 2px #0F8A8C; }
+    .m-no { box-shadow: inset 0 0 0 2px #B7C1C6; }
+
+    .grain::after { content: ''; position: absolute; inset: 0; pointer-events: none; opacity: .3; mix-blend-mode: soft-light;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .6 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+    .hero-bg { background:
+      radial-gradient(52rem 32rem at 92% 8%, rgba(62,207,195,.26), transparent 62%),
+      radial-gradient(36rem 28rem at 0% 0%, rgba(15,138,140,.10), transparent 60%),
+      radial-gradient(44rem 22rem at 55% 105%, rgba(220,230,229,.9), transparent 70%),
+      #F6F9F8; }
+    .ink-bg { background:
+      radial-gradient(36rem 24rem at 100% 0%, rgba(62,207,195,.20), transparent 60%),
+      radial-gradient(30rem 22rem at 0% 100%, rgba(15,138,140,.32), transparent 62%),
+      #0E1A2F; }
+
+    .btn { display: inline-flex; align-items: center; justify-content: center; border-radius: 999px; font-weight: 700; line-height: 1; padding: 1.05rem 1.6rem;
+      transition: transform .45s var(--spring), opacity .2s ease; }
+    .btn:hover { transform: translateY(-2px); }
+    .btn:active { transform: translateY(0) scale(.97); transition-duration: .1s; }
+    .btn-teal { background: #0F8A8C; color: #fff; box-shadow: 0 1px 2px rgba(11,102,104,.3), 0 10px 22px -8px rgba(15,138,140,.55); }
+    .btn-line { color: #0E1A2F; box-shadow: inset 0 0 0 1.5px #C9D6D5; background: rgba(255,255,255,.6); }
+    .btn-white { background: #fff; color: #0E1A2F; }
+    .btn-ghost-dark { color: #fff; box-shadow: inset 0 0 0 1.5px rgba(255,255,255,.28); }
+    :is(.btn, .lnk, summary):focus-visible { outline: 2px solid #3ECFC3; outline-offset: 3px; }
+    .lnk { position: relative; font-weight: 600; border-radius: 3px; transition: opacity .2s ease; }
+    .lnk::after { content: ''; position: absolute; left: 0; right: 0; bottom: -3px; height: 2px; border-radius: 2px; background: #0F8A8C; transform: scaleX(0); transform-origin: left; transition: transform .45s var(--spring); }
+    .lnk:hover::after { transform: scaleX(1); }
+    .lnk:active { opacity: .6; }
+
+    /* Pain-point cards: lift, fill and reveal "There's a fix" on hover */
+    .pcard { position: relative; border-radius: 1.5rem; background: #F6F9F8; padding: 1.75rem 1.75rem 2rem; box-shadow: inset 0 0 0 1px #DCE6E5; transition: transform .55s var(--spring); }
+    .pcard-w { background: #fff; box-shadow: var(--elev), inset 0 0 0 1px #E8EFEE; }
+    .pcard::before { content: ''; position: absolute; inset: 0; border-radius: inherit; background: #fff; box-shadow: var(--float), inset 0 0 0 1px #E8EFEE; opacity: 0; transition: opacity .35s ease; }
+    .pcard > * { position: relative; }
+    .pcard:hover { transform: translateY(-6px); }
+    .pcard:hover::before { opacity: 1; }
+    .pcard .bar { position: absolute; left: 1.75rem; right: 1.75rem; top: 0; height: 3px; border-radius: 0 0 3px 3px; background: linear-gradient(90deg, #0F8A8C, #3ECFC3); transform: scaleX(0); transform-origin: left; transition: transform .6s var(--spring); }
+    .pcard:hover .bar { transform: scaleX(1); }
+    .pfix { display: flex; align-items: center; gap: .6rem; height: 1rem; font-size: .8125rem; font-weight: 600; color: #0B6668; }
+    .pdot { position: relative; width: .875rem; height: .875rem; }
+    .pdot .m { position: absolute; inset: 0; transition: opacity .3s ease, transform .5s var(--spring); }
+    .pdot .m-fit { opacity: 0; transform: scale(.3); }
+    .pcard:hover .pdot .m-fit { opacity: 1; transform: scale(1); }
+    .pcard:hover .pdot .m-no { opacity: 0; }
+    .ptxt { opacity: 0; transform: translateX(-6px); transition: opacity .3s ease .05s, transform .5s var(--spring) .05s; }
+    .pcard:hover .ptxt { opacity: 1; transform: none; }
+    @media (hover: none) { .pdot .m-fit, .ptxt { opacity: 1; transform: none; } .pdot .m-no { opacity: 0; } }
+
+    details summary { list-style: none; cursor: pointer; border-radius: 6px; }
+    details summary::-webkit-details-marker { display: none; }
+    details summary .q { transition: opacity .2s ease; }
+    details summary:hover .q { opacity: .7; }
+    details summary:active .q { opacity: .5; }
+    details .pm { transition: transform .45s var(--spring); }
+    details[open] .pm { transform: rotate(45deg); }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { transition-duration: .01ms !important; animation: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <header id="top" class="fixed inset-x-0 top-0 z-50 px-4 md:px-8 pt-4">
+    <nav class="mx-auto max-w-wrap flex items-center justify-between rounded-full bg-white/80 backdrop-blur-xl pl-4 pr-2 py-2" style="box-shadow: var(--elev), inset 0 0 0 1px rgba(220,230,229,.9)">
+      <a href="index.html" class="lnk flex items-center gap-2.5 after:!hidden" aria-label="Clarion AI home">
+        <img src="brand_assets/clarion-mark-transparent.png" alt="" class="h-8 w-auto" />
+        <span class="d text-[0.95rem] !tracking-[0.02em] !leading-none">CLARION AI</span>
+      </a>
+      <div class="hidden md:flex items-center gap-8 text-[0.95rem]">
+        <a href="#included" class="lnk">What you get</a>
+        <a href="#start" class="lnk">Get started</a>
+        <a href="#faq" class="lnk">Questions</a>
+      </div>
+      <a href="https://tally.so/r/PR1v5b" target="_blank" rel="noopener" class="btn btn-teal !py-3 !px-5 text-sm">Free AI check-up</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero-bg grain relative overflow-hidden">
+      <div class="relative z-10 mx-auto max-w-wrap px-5 md:px-8 pt-28 md:pt-36 pb-20 md:pb-28 grid lg:grid-cols-12 gap-14 lg:gap-10 items-center">
+        <div class="lg:col-span-6">
+          <p class="text-sm font-semibold text-teal-deep">The AI Opportunity Audit</p>
+          <h1 class="d mt-4 text-[2.25rem] sm:text-[3rem] lg:text-[3.35rem]">Know exactly where AI will save your business time, in three weeks.</h1>
+          <p class="mt-7 max-w-copy text-lg text-slate">We map how your business really runs, find the tasks AI can take off your plate, give you a costed plan, and set up your first quick win with you. Plain language, and no vendor strings attached.</p>
+          <div class="mt-10 flex flex-wrap gap-3">
+            <a href="https://tally.so/r/PR1v5b" target="_blank" rel="noopener" class="btn btn-teal">Start with the free check-up</a>
+            <a href="#included" class="btn btn-line">See what's included</a>
+          </div>
+          <p class="mt-6 text-sm text-slate">Start with a free check-up, then a free discovery call.</p>
+        </div>
+
+        <!-- Sample audit summary -->
+        <div class="lg:col-span-6">
+          <div class="rounded-[1.75rem] bg-white p-6 sm:p-8" style="box-shadow: var(--float), inset 0 0 0 1px #E8EFEE">
+            <div class="flex flex-wrap items-baseline justify-between gap-2">
+              <h2 class="d text-xl !tracking-[-0.02em]">Audit summary</h2>
+              <p class="text-sm text-slate">Accounting firm, 35 people</p>
+            </div>
+            <ul class="mt-5 divide-y divide-haze">
+              <li class="flex items-center gap-4 py-3.5"><span class="m m-fit"></span><span class="flex-1 font-semibold text-ink">Proposals and reports</span><span class="text-sm font-semibold text-teal-deep whitespace-nowrap">~6 h saved / week</span></li>
+              <li class="flex items-center gap-4 py-3.5"><span class="m m-fit"></span><span class="flex-1 font-semibold text-ink">Meeting notes</span><span class="text-sm font-semibold text-teal-deep whitespace-nowrap">~4 h saved / week</span></li>
+              <li class="flex items-center gap-4 py-3.5"><span class="m m-test"></span><span class="flex-1 font-semibold text-ink">Time and billing</span><span class="text-sm text-slate whitespace-nowrap">Test first</span></li>
+              <li class="flex items-center gap-4 py-3.5"><span class="m m-test"></span><span class="flex-1 font-semibold text-ink">Document search</span><span class="text-sm text-slate whitespace-nowrap">Test first</span></li>
+              <li class="flex items-center gap-4 py-3.5"><span class="m m-no"></span><span class="flex-1 font-semibold text-slate">Client advice</span><span class="text-sm text-slate whitespace-nowrap">Not yet</span></li>
+            </ul>
+            <div class="mt-5 rounded-2xl bg-teal-wash p-5">
+              <p class="text-sm font-semibold text-teal-deep">Recommended first step</p>
+              <p class="mt-1 text-ink">Start with meeting notes. Low risk, and it works with tools the firm already pays for.</p>
+            </div>
+          </div>
+          <p class="mt-4 px-2 text-sm text-slate">Illustrative example. Your audit is built from your own processes.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAIN → ANSWER -->
+    <section class="sec bg-white">
+      <div class="mx-auto max-w-wrap px-5 md:px-8">
+        <h2 class="d max-w-3xl text-[2rem] md:text-[2.75rem]">If this sounds like your week, the audit is for you</h2>
+        <p class="mt-5 max-w-copy text-lg text-slate">Each pain point gets a concrete answer, specific to your business.</p>
+        <div class="mt-14 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="pcard flex flex-col"><span class="bar" aria-hidden="true"></span><div class="pfix" aria-hidden="true"><span class="pdot"><span class="m m-no"></span><span class="m m-fit"></span></span><span class="ptxt">There&#39;s a fix</span></div>
+            <p class="mt-5 d text-[1.25rem] !leading-snug !tracking-[-0.02em]">“Admin eats my evenings.”</p>
+            <div class="mt-auto pt-6"><div class="border-t border-haze pt-5"><p class="text-sm font-semibold text-teal-deep">The audit gives you</p><p class="mt-1 text-ink">A ranked list of the admin tasks AI can take over, with the time each one saves.</p></div></div>
+          </div>
+          <div class="pcard flex flex-col"><span class="bar" aria-hidden="true"></span><div class="pfix" aria-hidden="true"><span class="pdot"><span class="m m-no"></span><span class="m m-fit"></span></span><span class="ptxt">There&#39;s a fix</span></div>
+            <p class="mt-5 d text-[1.25rem] !leading-snug !tracking-[-0.02em]">“Everyone says use AI. I don't know where to start.”</p>
+            <div class="mt-auto pt-6"><div class="border-t border-haze pt-5"><p class="text-sm font-semibold text-teal-deep">The audit gives you</p><p class="mt-1 text-ink">A clear first step you can take next week, and the reasons behind it.</p></div></div>
+          </div>
+          <div class="pcard flex flex-col"><span class="bar" aria-hidden="true"></span><div class="pfix" aria-hidden="true"><span class="pdot"><span class="m m-no"></span><span class="m m-fit"></span></span><span class="ptxt">There&#39;s a fix</span></div>
+            <p class="mt-5 d text-[1.25rem] !leading-snug !tracking-[-0.02em]">“We bought a tool. Nobody uses it.”</p>
+            <div class="mt-auto pt-6"><div class="border-t border-haze pt-5"><p class="text-sm font-semibold text-teal-deep">The audit gives you</p><p class="mt-1 text-ink">An honest review of the tools you already pay for: what to keep, change or cancel.</p></div></div>
+          </div>
+          <div class="pcard flex flex-col"><span class="bar" aria-hidden="true"></span><div class="pfix" aria-hidden="true"><span class="pdot"><span class="m m-no"></span><span class="m m-fit"></span></span><span class="ptxt">There&#39;s a fix</span></div>
+            <p class="mt-5 d text-[1.25rem] !leading-snug !tracking-[-0.02em]">“I can't tell which vendor is honest.”</p>
+            <div class="mt-auto pt-6"><div class="border-t border-haze pt-5"><p class="text-sm font-semibold text-teal-deep">The audit gives you</p><p class="mt-1 text-ink">We build it or recommend the best existing solution, whichever gets the result for less. You buy directly, and we take no commissions.</p></div></div>
+          </div>
+          <div class="pcard flex flex-col"><span class="bar" aria-hidden="true"></span><div class="pfix" aria-hidden="true"><span class="pdot"><span class="m m-no"></span><span class="m m-fit"></span></span><span class="ptxt">There&#39;s a fix</span></div>
+            <p class="mt-5 d text-[1.25rem] !leading-snug !tracking-[-0.02em]">“My team worries AI will replace them.”</p>
+            <div class="mt-auto pt-6"><div class="border-t border-haze pt-5"><p class="text-sm font-semibold text-teal-deep">The audit gives you</p><p class="mt-1 text-ink">Recommendations built with you and your team, aimed at the work nobody wants to do.</p></div></div>
+          </div>
+          <div class="pcard flex flex-col"><span class="bar" aria-hidden="true"></span><div class="pfix" aria-hidden="true"><span class="pdot"><span class="m m-no"></span><span class="m m-fit"></span></span><span class="ptxt">There&#39;s a fix</span></div>
+            <p class="mt-5 d text-[1.25rem] !leading-snug !tracking-[-0.02em]">“I can't afford an expensive mistake.”</p>
+            <div class="mt-auto pt-6"><div class="border-t border-haze pt-5"><p class="text-sm font-semibold text-teal-deep">The audit gives you</p><p class="mt-1 text-ink">The cost, risk and expected payback of every recommendation, before you spend anything.</p></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COST OF WAITING -->
+    <section class="sec">
+      <div class="mx-auto max-w-wrap px-5 md:px-8">
+        <h2 class="d max-w-3xl text-[2rem] md:text-[2.75rem]">What waiting costs</h2>
+        <p class="mt-5 max-w-copy text-lg text-slate">Doing nothing feels free. It isn't.</p>
+        <div class="mt-14 grid md:grid-cols-3 gap-6">
+          <div class="pcard pcard-w">
+            <span class="bar" aria-hidden="true"></span>
+            <span class="grid h-12 w-12 place-items-center rounded-full bg-teal-wash text-teal-deep" aria-hidden="true">
+              <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg>
+            </span>
+            <h3 class="d mt-6 text-[1.6rem] !tracking-[-0.02em]">Hours</h3>
+            <p class="mt-3 text-slate">Repetitive work keeps eating your week, and your team's. Every week you put it off, those hours are gone.</p>
+          </div>
+          <div class="pcard pcard-w">
+            <span class="bar" aria-hidden="true"></span>
+            <span class="grid h-12 w-12 place-items-center rounded-full bg-teal-wash text-teal-deep" aria-hidden="true">
+              <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6.5" width="18" height="11" rx="2.5"/><circle cx="12" cy="12" r="2.5"/><path d="M6.5 9.5v5M17.5 9.5v5"/></svg>
+            </span>
+            <h3 class="d mt-6 text-[1.6rem] !tracking-[-0.02em]">Money</h3>
+            <p class="mt-3 text-slate">Subscriptions that don't fit keep renewing, and the next tool gets bought on a hunch.</p>
+          </div>
+          <div class="pcard pcard-w">
+            <span class="bar" aria-hidden="true"></span>
+            <span class="grid h-12 w-12 place-items-center rounded-full bg-teal-wash text-teal-deep" aria-hidden="true">
+              <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 18.5h17"/><path d="M5 15l4.5-4.5 3.5 3.5 6-6"/><path d="M15 8h4v4"/></svg>
+            </span>
+            <h3 class="d mt-6 text-[1.6rem] !tracking-[-0.02em]">Ground</h3>
+            <p class="mt-3 text-slate">Competitors who start small now are learning what works. That head start grows every month.</p>
+          </div>
+        </div>
+        <div class="mt-10 flex flex-col md:flex-row md:items-center justify-between gap-8 rounded-[1.75rem] bg-white p-8 md:p-10" style="box-shadow: inset 0 0 0 1px #DCE6E5">
+          <p class="max-w-2xl text-xl text-ink">Finding out where you stand costs nothing. The free check-up takes a few minutes.</p>
+          <a href="https://tally.so/r/PR1v5b" target="_blank" rel="noopener" class="btn btn-teal shrink-0">Start the free check-up</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHAT'S INCLUDED -->
+    <section id="included" class="sec bg-white">
+      <div class="mx-auto max-w-wrap px-5 md:px-8 grid lg:grid-cols-12 gap-14 lg:gap-16">
+        <div class="lg:col-span-6">
+          <h2 class="d text-[2rem] md:text-[2.75rem]">What you get</h2>
+          <p class="mt-5 max-w-copy text-lg text-slate">Everything is written for owners and managers, and yours to keep.</p>
+          <ul class="mt-10 space-y-6">
+            <li class="flex gap-4"><span class="m m-fit mt-[.45rem]"></span><div><h3 class="font-bold text-ink">A map of your processes</h3><p class="text-slate">Each one rated strong fit, worth testing or not yet.</p></div></li>
+            <li class="flex gap-4"><span class="m m-fit mt-[.45rem]"></span><div><h3 class="font-bold text-ink">Your top three opportunities</h3><p class="text-slate">With expected time or cost savings for each.</p></div></li>
+            <li class="flex gap-4"><span class="m m-fit mt-[.45rem]"></span><div><h3 class="font-bold text-ink">The best solution for each opportunity</h3><p class="text-slate">We build it, or recommend the best existing solution. Whichever gets the result for less.</p></div></li>
+            <li class="flex gap-4"><span class="m m-fit mt-[.45rem]"></span><div><h3 class="font-bold text-ink">A 12-month plan with budgets</h3><p class="text-slate">Starting with one step you can take next week.</p></div></li>
+            <li class="flex gap-4"><span class="m m-fit mt-[.45rem]"></span><div><h3 class="font-bold text-ink">A written report and presentation</h3><p class="text-slate">We walk you and your team through every finding.</p></div></li>
+            <li class="flex gap-4"><span class="m m-fit mt-[.45rem]"></span><div><h3 class="font-bold text-ink">Your first quick win, up and running</h3><p class="text-slate">In week three we put it in place with you, and show your team how to use it.</p></div></li>
+          </ul>
+        </div>
+        <div class="lg:col-span-6">
+          <div class="rounded-[1.75rem] bg-paper p-8 md:p-10" style="box-shadow: inset 0 0 0 1px #DCE6E5">
+            <h3 class="d text-[1.5rem] !tracking-[-0.02em]">How the three weeks run</h3>
+            <ol class="relative mt-8 space-y-8">
+              <span class="absolute left-[1.15rem] top-10 bottom-20 w-0.5 bg-haze" aria-hidden="true"></span>
+              <li class="relative pl-14">
+                <span class="absolute left-0 top-0 grid h-[2.35rem] w-[2.35rem] place-items-center rounded-full bg-teal text-sm font-bold text-white" style="box-shadow: 0 0 0 6px #F6F9F8">1</span>
+                <h4 class="font-bold text-ink">Week 1: Listen</h4>
+                <p class="mt-1 text-slate">Interviews with you and the people who do the work. We review your tools and data.</p>
+              </li>
+              <li class="relative pl-14">
+                <span class="absolute left-0 top-0 grid h-[2.35rem] w-[2.35rem] place-items-center rounded-full bg-white text-sm font-bold text-teal" style="box-shadow: 0 0 0 6px #F6F9F8, inset 0 0 0 2px #0F8A8C">2</span>
+                <h4 class="font-bold text-ink">Week 2: Rate</h4>
+                <p class="mt-1 text-slate">Every process is scored on impact, effort, risk and cost, and we decide whether to build it or recommend an existing solution.</p>
+              </li>
+              <li class="relative pl-14">
+                <span class="absolute left-0 top-0 grid h-[2.35rem] w-[2.35rem] place-items-center rounded-full bg-white text-sm font-bold text-teal" style="box-shadow: 0 0 0 6px #F6F9F8, inset 0 0 0 2px #0F8A8C">3</span>
+                <h4 class="font-bold text-ink">Week 3: Plan and implement</h4>
+                <p class="mt-1 text-slate">We present the report and roadmap to you and your team, then set up your first quick win together so you see results straight away.</p>
+              </li>
+            </ol>
+            <div class="mt-8 border-t border-haze pt-6"><p class="font-bold text-ink">After week three</p><p class="mt-1 text-slate">Want help with the rest of your roadmap? We build what you need, or recommend the best existing solution, which you buy directly from the provider. Either way, we choose the option that gets the result for less.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GETTING STARTED -->
+    <section id="start" class="sec">
+      <div class="mx-auto max-w-wrap px-5 md:px-8">
+        <div class="grid lg:grid-cols-12 gap-10 lg:gap-14 rounded-[1.75rem] bg-white p-8 md:p-12" style="box-shadow: var(--float), inset 0 0 0 2px #0F8A8C">
+          <div class="lg:col-span-5">
+            <h2 class="d text-[1.9rem] md:text-[2.5rem]">How to get started</h2>
+            <p class="mt-5 max-w-copy text-slate">It starts with two free steps, and there's no commitment until you're sure the audit is right for you.</p>
+            <p class="mt-6 max-w-copy text-ink"><span class="font-bold">Our promise:</span> if AI isn't worth it for you yet, we'll tell you, and explain what would need to change.</p>
+            <a href="https://tally.so/r/PR1v5b" target="_blank" rel="noopener" class="btn btn-teal mt-8">Start the free check-up</a>
+          </div>
+          <ol class="lg:col-span-7 relative space-y-8 self-center">
+            <span class="absolute left-[1.15rem] top-10 bottom-20 w-0.5 bg-haze" aria-hidden="true"></span>
+            <li class="relative pl-14">
+              <span class="absolute left-0 top-0 grid h-[2.35rem] w-[2.35rem] place-items-center rounded-full bg-teal text-sm font-bold text-white" style="box-shadow: 0 0 0 6px #fff">1</span>
+              <h3 class="font-bold text-ink">Free AI check-up</h3>
+              <p class="mt-1 text-slate">Answer a few questions about your business online. It takes a few minutes, and you get a first read on where AI could help.</p>
+            </li>
+            <li class="relative pl-14">
+              <span class="absolute left-0 top-0 grid h-[2.35rem] w-[2.35rem] place-items-center rounded-full bg-white text-sm font-bold text-teal" style="box-shadow: 0 0 0 6px #fff, inset 0 0 0 2px #0F8A8C">2</span>
+              <h3 class="font-bold text-ink">Free discovery call</h3>
+              <p class="mt-1 text-slate">We talk through your results and your goals, and work out together whether the audit makes sense for you.</p>
+            </li>
+            <li class="relative pl-14">
+              <span class="absolute left-0 top-0 grid h-[2.35rem] w-[2.35rem] place-items-center rounded-full bg-white text-sm font-bold text-teal" style="box-shadow: 0 0 0 6px #fff, inset 0 0 0 2px #0F8A8C">3</span>
+              <h3 class="font-bold text-ink">Your audit begins</h3>
+              <p class="mt-1 text-slate">If it's a fit, we agree the scope and timing, then start with week one.</p>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- FIT -->
+    <section class="sec bg-white">
+      <div class="mx-auto max-w-wrap px-5 md:px-8">
+        <h2 class="d max-w-3xl text-[2rem] md:text-[2.75rem]">Is it right for you?</h2>
+        <div class="mt-14 grid md:grid-cols-2 gap-12">
+          <div class="border-t-2 border-teal pt-6">
+            <h3 class="text-lg font-bold text-ink">A good fit if you</h3>
+            <ul class="mt-5 space-y-4 text-ink">
+              <li class="flex items-start gap-3"><span class="m m-fit mt-[.45rem]"></span>Run a business of 1 to 250 people, solo founders included</li>
+              <li class="flex items-start gap-3"><span class="m m-fit mt-[.45rem]"></span>Lose hours every week to repetitive admin</li>
+              <li class="flex items-start gap-3"><span class="m m-fit mt-[.45rem]"></span>Are open to changing how some work gets done</li>
+              <li class="flex items-start gap-3"><span class="m m-fit mt-[.45rem]"></span>Want an independent view before you spend</li>
+            </ul>
+          </div>
+          <div class="border-t-2 border-off pt-6">
+            <h3 class="text-lg font-bold text-ink">Not the right fit if you</h3>
+            <ul class="mt-5 space-y-4 text-slate">
+              <li class="flex items-start gap-3"><span class="m m-no mt-[.45rem]"></span>Want a tool installed without anyone looking at how you work</li>
+              <li class="flex items-start gap-3"><span class="m m-no mt-[.45rem]"></span>Already have an in-house data team</li>
+              <li class="flex items-start gap-3"><span class="m m-no mt-[.45rem]"></span>Are looking for someone to sell you a specific tool</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="sec">
+      <div class="mx-auto max-w-wrap px-5 md:px-8 grid lg:grid-cols-12 gap-10 lg:gap-12">
+        <div class="lg:col-span-4">
+          <h2 class="d text-[2rem] md:text-[2.75rem]">Questions about the audit</h2>
+          <p class="mt-5 text-slate">Something else? <a href="mailto:hello@example.com" class="lnk text-teal-deep">Email us</a></p>
+        </div>
+        <div class="lg:col-span-8 divide-y divide-haze border-y border-haze">
+          <details class="py-6" open>
+            <summary class="flex items-center justify-between gap-6"><span class="q text-lg font-bold text-ink">How long does it take?</span><span class="pm grid h-9 w-9 shrink-0 place-items-center rounded-full bg-white text-xl text-teal" aria-hidden="true">+</span></summary>
+            <p class="mt-3 max-w-copy text-slate">Usually three weeks from kick-off. Very small businesses often need less time, larger ones a little more. We agree the timing upfront.</p>
+          </details>
+          <details class="py-6">
+            <summary class="flex items-center justify-between gap-6"><span class="q text-lg font-bold text-ink">How much of our time does it need?</span><span class="pm grid h-9 w-9 shrink-0 place-items-center rounded-full bg-white text-xl text-teal" aria-hidden="true">+</span></summary>
+            <p class="mt-3 max-w-copy text-slate">A few hours in total: a kick-off with you, short interviews with the people who do the work, and the final presentation.</p>
+          </details>
+          <details class="py-6">
+            <summary class="flex items-center justify-between gap-6"><span class="q text-lg font-bold text-ink">Do you build or implement the AI?</span><span class="pm grid h-9 w-9 shrink-0 place-items-center rounded-full bg-white text-xl text-teal" aria-hidden="true">+</span></summary>
+            <p class="mt-3 max-w-copy text-slate">Yes. In week three we set up your first quick win with you and train your team to use it. After the audit, we can build the rest of your roadmap. For every step, we either build it or recommend the best existing solution, whichever gets the same result for less. If we recommend a tool, you buy it directly from the provider.</p>
+          </details>
+          <details class="py-6">
+            <summary class="flex items-center justify-between gap-6"><span class="q text-lg font-bold text-ink">What if you find nothing worth doing?</span><span class="pm grid h-9 w-9 shrink-0 place-items-center rounded-full bg-white text-xl text-teal" aria-hidden="true">+</span></summary>
+            <p class="mt-3 max-w-copy text-slate">Then you get a clear "not yet", with the reasons and what would need to change. That alone can save you from buying tools that don't fit.</p>
+          </details>
+          <details class="py-6">
+            <summary class="flex items-center justify-between gap-6"><span class="q text-lg font-bold text-ink">What happens to our data?</span><span class="pm grid h-9 w-9 shrink-0 place-items-center rounded-full bg-white text-xl text-teal" aria-hidden="true">+</span></summary>
+            <p class="mt-3 max-w-copy text-slate">We treat it as confidential, can work under NDA, and only use what the audit needs. Data protection is part of every recommendation.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section id="contact" class="sec pt-0 px-4 md:px-8">
+      <div class="ink-bg grain relative mx-auto max-w-wrap overflow-hidden rounded-[2rem] px-7 py-14 sm:px-12 md:px-16 md:py-20" style="box-shadow: var(--float)">
+        <div class="relative z-10 grid lg:grid-cols-12 gap-10 items-end">
+          <div class="lg:col-span-8">
+            <h2 class="d text-[2rem] md:text-[3rem] !text-white">Start with the free AI check&#8209;up</h2>
+            <p class="mt-5 max-w-copy text-lg text-white/70">Answer a few questions about your business. You'll get a first read on where AI could help, and we'll invite you to a free discovery call.</p>
+          </div>
+          <div class="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col gap-3 lg:items-stretch">
+            <a href="https://tally.so/r/PR1v5b" target="_blank" rel="noopener" class="btn btn-white">Start the free check-up</a>
+            <a href="mailto:hello@example.com" class="btn btn-ghost-dark">hello@example.com</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-haze">
+    <div class="mx-auto max-w-wrap px-5 md:px-8 py-10 flex flex-col md:flex-row gap-6 md:items-center justify-between text-sm">
+      <a href="index.html" class="lnk flex w-fit items-center gap-2.5 after:!hidden" aria-label="Clarion AI home">
+        <img src="brand_assets/clarion-mark-transparent.png" alt="" class="h-7 w-auto" />
+        <span class="d text-sm !tracking-[0.02em]">CLARION AI</span>
+      </a>
+      <div class="flex flex-wrap gap-x-7 gap-y-2">
+        <a href="index.html" class="lnk">Home</a>
+        <a href="#included" class="lnk">What you get</a>
+        <a href="#start" class="lnk">Get started</a>
+        <a href="https://tally.so/r/PR1v5b" target="_blank" rel="noopener" class="lnk">Free check-up</a>
+      </div>
+      <p class="text-slate">© 2026 Clarion AI</p>
+    </div>
+  </footer>
+</body>
+</html>

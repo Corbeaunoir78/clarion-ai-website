@@ -1,0 +1,469 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Clarion AI | Find where AI fits in your business</title>
+  <meta name="description" content="Clarion AI helps small businesses, from solo founders to teams of 250, find where AI genuinely helps, and where it doesn't. Start with a free AI check-up." />
+  <link rel="icon" href="brand_assets/clarion-mark-transparent.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@112..125,500..800&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ink: '#0E1A2F', slate: '#5A6679', paper: '#F6F9F8', haze: '#DCE6E5',
+            teal: { DEFAULT: '#0F8A8C', deep: '#0B6668', aqua: '#3ECFC3', wash: '#E3F5F2' },
+            off: '#B7C1C6',
+          },
+          fontFamily: { display: ['Archivo', 'system-ui', 'sans-serif'], sans: ['"Public Sans"', 'system-ui', 'sans-serif'] },
+          maxWidth: { wrap: '74rem', copy: '38rem' },
+        },
+      },
+    };
+  </script>
+  <style>
+    :root {
+      --spring: cubic-bezier(.34, 1.56, .64, 1);
+      --out: cubic-bezier(.22, 1, .36, 1);
+      --elev: 0 1px 2px rgba(14,26,47,.05), 0 6px 16px -6px rgba(15,138,140,.12), 0 18px 36px -18px rgba(14,26,47,.14);
+      --float: 0 2px 4px rgba(14,26,47,.05), 0 14px 28px -8px rgba(15,138,140,.18), 0 40px 72px -24px rgba(14,26,47,.28);
+      --sec: 6rem;
+    }
+    @media (min-width: 768px) { :root { --sec: 8.5rem; } }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Public Sans', system-ui, sans-serif; font-size: 1.0625rem; line-height: 1.7; color: #2B3850; background: #F6F9F8; -webkit-font-smoothing: antialiased; }
+    .d { font-family: 'Archivo', system-ui, sans-serif; font-stretch: 118%; font-weight: 750; letter-spacing: -0.03em; line-height: 1.04; color: #0E1A2F; }
+    .sec { padding-block: var(--sec); }
+
+    .m { display: inline-block; width: .875rem; height: .875rem; border-radius: 999px; flex-shrink: 0; }
+    .m-fit { background: #0F8A8C; box-shadow: 0 0 0 3px rgba(62,207,195,.25); }
+    .m-test { background: linear-gradient(90deg, #0F8A8C 50%, transparent 50%); box-shadow: inset 0 0 0 2px #0F8A8C; }
+    .m-no { box-shadow: inset 0 0 0 2px #B7C1C6; }
+
+    .grain::after { content: ''; position: absolute; inset: 0; pointer-events: none; opacity: .3; mix-blend-mode: soft-light;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .6 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+    .hero-bg { background:
+      radial-gradient(52rem 32rem at 92% 8%, rgba(62,207,195,.26), transparent 62%),
+      radial-gradient(36rem 28rem at 0% 0%, rgba(15,138,140,.10), transparent 60%),
+      radial-gradient(44rem 22rem at 55% 105%, rgba(220,230,229,.9), transparent 70%),
+      #F6F9F8; }
+    .ink-bg { background:
+      radial-gradient(36rem 24rem at 100% 0%, rgba(62,207,195,.20), transparent 60%),
+      radial-gradient(30rem 22rem at 0% 100%, rgba(15,138,140,.32), transparent 62%),
+      #0E1A2F; }
+
+    .btn { display: inline-flex; align-items: center; justify-content: center; border-radius: 999px; font-weight: 700; line-height: 1; padding: 1.05rem 1.6rem;
+      transition: transform .45s var(--spring), opacity .2s ease; }
+    .btn:hover { transform: translateY(-2px); }
+    .btn:active { transform: translateY(0) scale(.97); transition-duration: .1s; }
+    .btn-teal { background: #0F8A8C; color: #fff; box-shadow: 0 1px 2px rgba(11,102,104,.3), 0 10px 22px -8px rgba(15,138,140,.55); }
+    .btn-line { color: #0E1A2F; box-shadow: inset 0 0 0 1.5px #C9D6D5; background: rgba(255,255,255,.6); }
+    .btn-white { background: #fff; color: #0E1A2F; }
+    .btn-ghost-dark { color: #fff; box-shadow: inset 0 0 0 1.5px rgba(255,255,255,.28); }
+    :is(.btn, .lnk, .tab, summary):focus-visible { outline: 2px solid #3ECFC3; outline-offset: 3px; }
+    .lnk { position: relative; font-weight: 600; border-radius: 3px; transition: opacity .2s ease; }
+    .lnk::after { content: ''; position: absolute; left: 0; right: 0; bottom: -3px; height: 2px; border-radius: 2px; background: #0F8A8C; transform: scaleX(0); transform-origin: left; transition: transform .45s var(--spring); }
+    .lnk:hover::after { transform: scaleX(1); }
+    .lnk:active { opacity: .6; }
+
+    .tab { position: relative; flex: 1 1 auto; white-space: nowrap; padding: .55rem .75rem; border-radius: 999px; font-size: .9rem; font-weight: 600; color: #5A6679; transition: transform .4s var(--spring), opacity .2s ease; }
+    .tab:hover { opacity: .75; }
+    .tab:active { transform: scale(.96); }
+    .tab[aria-selected="true"] { background: #0E1A2F; color: #fff; }
+    .tab[aria-selected="true"]:hover { opacity: 1; }
+
+    .row { opacity: 0; transform: translateY(8px); transition: opacity .5s var(--out), transform .6s var(--out); }
+    .row.on { opacity: 1; transform: none; }
+
+    /* Signal rings: echo the logo's concentric arcs, rippling out from the map card */
+    .rings { position: absolute; left: 0; top: 0; width: 0; height: 0; z-index: 0; pointer-events: none; }
+    .ring { position: absolute; left: -900px; top: -900px; width: 1800px; height: 1800px; border-radius: 50%;
+      border: 2.5px solid rgba(15,138,140,.5); opacity: 0; will-change: transform, opacity; }
+    .ring:nth-child(even) { border-color: rgba(62,207,195,.65); border-width: 4px; }
+    .core { position: absolute; left: -340px; top: -340px; width: 680px; height: 680px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(62,207,195,.30), rgba(62,207,195,0) 65%); }
+    #map .m-fit { position: relative; }
+    #map .m-fit::after { content: ''; position: absolute; inset: -5px; border-radius: 50%; background: rgba(62,207,195,.6); opacity: 0; transform: scale(.6); }
+    #map .m-fit.ping { animation: pop .7s var(--spring); }
+    #map .m-fit.ping::after { animation: halo 1.2s var(--out); }
+    @keyframes pop { 0% { transform: scale(1) } 35% { transform: scale(1.35) } 100% { transform: scale(1) } }
+    @keyframes halo { 0% { opacity: .9; transform: scale(.6) } 100% { opacity: 0; transform: scale(2.6) } }
+
+    /* Pain-point cards: lift, fill and reveal "There's a fix" on hover */
+    .pcard { position: relative; border-radius: 1.5rem; background: #F6F9F8; padding: 1.75rem 1.75rem 2rem; box-shadow: inset 0 0 0 1px #DCE6E5; transition: transform .55s var(--spring); }
+    .pcard::before { content: ''; position: absolute; inset: 0; border-radius: inherit; background: #fff; box-shadow: var(--float), inset 0 0 0 1px #E8EFEE; opacity: 0; transition: opacity .35s ease; }
+    .pcard > * { position: relative; }
+    .pcard:hover { transform: translateY(-6px); }
+    .pcard:hover::before { opacity: 1; }
+    .pcard .bar { position: absolute; left: 1.75rem; right: 1.75rem; top: 0; height: 3px; border-radius: 0 0 3px 3px; background: linear-gradient(90deg, #0F8A8C, #3ECFC3); transform: scaleX(0); transform-origin: left; transition: transform .6s var(--spring); }
+    .pcard:hover .bar { transform: scaleX(1); }
+    .pfix { display: flex; align-items: center; gap: .6rem; height: 1rem; font-size: .8125rem; font-weight: 600; color: #0B6668; }
+    .pdot { position: relative; width: .875rem; height: .875rem; }
+    .pdot .m { position: absolute; inset: 0; transition: opacity .3s ease, transform .5s var(--spring); }
+    .pdot .m-fit { opacity: 0; transform: scale(.3); }
+    .pcard:hover .pdot .m-fit { opacity: 1; transform: scale(1); }
+    .pcard:hover .pdot .m-no { opacity: 0; }
+    .ptxt { opacity: 0; transform: translateX(-6px); transition: opacity .3s ease .05s, transform .5s var(--spring) .05s; }
+    .pcard:hover .ptxt { opacity: 1; transform: none; }
+    @media (hover: none) { .pdot .m-fit, .ptxt { opacity: 1; transform: none; } .pdot .m-no { opacity: 0; } }
+
+    details summary { list-style: none; cursor: pointer; border-radius: 6px; }
+    details summary::-webkit-details-marker { display: none; }
+    details summary .q { transition: opacity .2s ease; }
+    details summary:hover .q { opacity: .7; }
+    details summary:active .q { opacity: .5; }
+    details .pm { transition: transform .45s var(--spring); }
+    details[open] .pm { transform: rotate(45deg); }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { transition-duration: .01ms !important; animation: none !important; }
+      .row { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <header id="top" class="fixed inset-x-0 top-0 z-50 px-4 md:px-8 pt-4">
+    <nav class="mx-auto max-w-wrap flex items-center justify-between rounded-full bg-white/80 backdrop-blur-xl pl-4 pr-2 py-2" style="box-shadow: var(--elev), inset 0 0 0 1px rgba(220,230,229,.9)">
+      <a href="#top" class="lnk flex items-center gap-2.5 after:!hidden" aria-label="Clarion AI, back to top">
+        <img src="brand_assets/clarion-mark-transparent.png" alt="" class="h-8 w-auto" />
+        <span class="d text-[0.95rem] !tracking-[0.02em] !leading-none">CLARION AI</span>
+      </a>
+      <div class="hidden md:flex items-center gap-8 text-[0.95rem]">
+        <a href="#pains" class="lnk">Sound familiar?</a>
+        <a href="#checkup" class="lnk">How it works</a>
+        <a href="audit.html" class="lnk">The audit</a>
+        <a href="#faq" class="lnk">Questions</a>
+      </div>
+      <a href="https://tally.so/r/PR1v5b" target="_blank" rel="noopener" class="btn btn-teal !py-3 !px-5 text-sm">Free AI check-up</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero-bg grain relative overflow-hidden">
+      <div class="rings" aria-hidden="true"><div class="core"></div></div>
+      <div class="relative z-10 mx-auto max-w-wrap px-5 md:px-8 pt-28 md:pt-32 pb-20 md:pb-28 grid lg:grid-cols-12 gap-14 lg:gap-10 items-center">
+        <div class="lg:col-span-6">
+          <h1 class="d text-[2.35rem] sm:text-[3.25rem] lg:text-[3.6rem]">Find where AI fits in your business, and where it doesn't.</h1>
+          <p class="mt-7 max-w-copy text-lg text-slate">We help small businesses, from solo founders to teams of 250, separate the AI worth doing from the hype. You get an honest, vendor-neutral diagnosis in plain language, and a clear plan for what to do first.</p>
+          <div class="mt-10 flex flex-wrap gap-3">
+            <a href="https://tally.so/r/PR1v5b" target="_blank" rel="noopener" class="btn btn-teal">Start your free AI check-up</a>
+            <a href="#checkup" class="btn btn-line">See how it works</a>
+          </div>
+          <p class="mt-6 text-sm text-slate">Takes a few minutes. Free, with no commitment.</p>
+        </div>
+
+        <div class="lg:col-span-6">
+          <div id="mapCard" class="rounded-[1.75rem] bg-white p-5 sm:p-7" style="box-shadow: var(--float), inset 0 0 0 1px #E8EFEE">
+            <div class="flex flex-wrap items-baseline justify-between gap-2">
+              <h2 class="d text-xl !tracking-[-0.02em]">Where AI usually fits</h2>
+              <p class="text-sm text-slate">Pick your kind of business</p>
+            </div>
+            <div class="mt-4 grid grid-cols-2 sm:flex gap-1 rounded-[1.25rem] sm:rounded-full bg-paper p-1" role="tablist" aria-label="Kind of business">
+              <button class="tab" role="tab" aria-selected="true" data-s="services">Services</button>
+              <button class="tab" role="tab" aria-selected="false" data-s="retail">Shops</button>
+              <button class="tab" role="tab" aria-selected="false" data-s="trades">Trades</button>
+              <button class="tab" role="tab" aria-selected="false" data-s="hospitality">Hospitality</button>
+              <button class="tab col-span-2 sm:col-span-1" role="tab" aria-selected="false" data-s="solo">Solo &amp; micro</button>
+            </div>
+            <ul id="map" class="mt-5 divide-y divide-haze" aria-live="polite"></ul>
+            <div class="mt-5 flex flex-wrap items-center gap-x-5 gap-y-2 border-t border-haze pt-4 text-sm text-slate">
+              <span class="flex items-center gap-2"><span class="m m-fit"></span>Strong fit</span>
+              <span class="flex items-center gap-2"><span class="m m-test"></span>Worth testing</span>
+              <span class="flex items-center gap-2"><span class="m m-no"></span>Not yet</span>
+            </div>
+          </div>
+          <p class="mt-4 px-2 text-sm text-slate">A typical pattern, not your diagnosis. The free check-up looks at your business specifically.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAIN POINTS -->
+    <section id="pains" class="sec bg-white">
+      <div class="mx-auto max-w-wrap px-5 md:px-8">
+        <h2 class="d max-w-3xl text-[2rem] md:text-[2.75rem]">Sound familiar?</h2>
+        <p class="mt-5 max-w-copy text-lg text-slate">These are the things owners tell us in the first five minutes of every conversation.</p>
+        <div class="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="pcard"><span class="bar" aria-hidden="true"></span><div class="pfix" aria-hidden="true"><span class="pdot"><span class="m m-no"></span><span class="m m-fit"></span></span><span class="ptxt">There's a fix</span></div>
+            <p class="mt-5 d text-[1.3rem] !leading-tight !tracking-[-0.02em]">“Admin eats my evenings.”</p>
+            <p class="mt-3 text-slate">Quotes, invoices and emails get done after hours, when you should be resting or growing the business.</p>
+          </div>
+          <div class="pcard"><span class="bar" aria-hidden="true"></span><div class="pfix" aria-hidden="true"><span class="pdot"><span class="m m-no"></span><span class="m m-fit"></span></span><span class="ptxt">There's a fix</span></div>
+            <p class="mt-5 d text-[1.3rem] !leading-tight !tracking-[-0.02em]">“We answer the same questions all day.”</p>
+            <p class="mt-3 text-slate">Your team spends hours on repeat enquiries instead of the customers who need real attention.</p>
+          </div>
+          <div class="pcard"><span class="bar" aria-hidden="true"></span><div class="pfix" aria-hidden="true"><span class="pdot"><span class="m m-no"></span><span class="m m-fit"></span></span><span class="ptxt">There's a fix</span></div>
+            <p class="mt-5 d text-[1.3rem] !leading-tight !tracking-[-0.02em]">“Money slips through the cracks.”</p>
+            <p class="mt-3 text-slate">Unbilled hours, late payments and stock you didn't need. Small leaks that add up every month.</p>
+          </div>
+          <div class="pcard"><span class="bar" aria-hidden="true"></span><div class="pfix" aria-hidden="true"><span class="pdot"><span class="m m-no"></span><span class="m m-fit"></span></span><span class="ptxt">There's a fix</span></div>
+            <p class="mt-5 d text-[1.3rem] !leading-tight !tracking-[-0.02em]">“We’re stretched thin.”</p>
+            <p class="mt-3 text-slate">Whether it’s just you or a team of twenty, there are never enough hands, and hiring is slow and expensive.</p>
+          </div>
+          <div class="pcard"><span class="bar" aria-hidden="true"></span><div class="pfix" aria-hidden="true"><span class="pdot"><span class="m m-no"></span><span class="m m-fit"></span></span><span class="ptxt">There's a fix</span></div>
+            <p class="mt-5 d text-[1.3rem] !leading-tight !tracking-[-0.02em]">“Everyone says use AI. Nobody says where.”</p>
+            <p class="mt-3 text-slate">You hear about AI every day, but no one has looked at your business and told you where to start.</p>
+          </div>
+          <div class="pcard"><span class="bar" aria-hidden="true"></span><div class="pfix" aria-hidden="true"><span class="pdot"><span class="m m-no"></span><span class="m m-fit"></span></span><span class="ptxt">There's a fix</span></div>
+            <p class="mt-5 d text-[1.3rem] !leading-tight !tracking-[-0.02em]">“We bought a tool. Nobody uses it.”</p>
+            <p class="mt-3 text-slate">A subscription that looked promising in the demo now quietly renews every month.</p>
+          </div>
+        </div>
+        <div class="mt-16 flex flex-col md:flex-row md:items-center justify-between gap-8 rounded-[1.75rem] bg-paper p-8 md:p-10" style="box-shadow: inset 0 0 0 1px #DCE6E5">
+          <p class="max-w-2xl text-xl text-ink">Each of these has a fix. Some need AI, some don't. The free check-up tells you which, for your business.</p>
+          <a href="https://tally.so/r/PR1v5b" target="_blank" rel="noopener" class="btn btn-teal shrink-0">Start your free AI check-up</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW THE CHECK-UP WORKS -->
+    <section id="checkup" class="sec">
+      <div class="mx-auto max-w-wrap px-5 md:px-8">
+        <h2 class="d max-w-3xl text-[2rem] md:text-[2.75rem]">How the free check&#8209;up works</h2>
+        <p class="mt-5 max-w-copy text-lg text-slate">No call to book and no commitment. Just a few questions and an honest answer.</p>
+        <ol class="relative mt-16 grid md:grid-cols-3 gap-10">
+          <span class="absolute left-[1.15rem] top-2 bottom-24 w-0.5 bg-haze md:left-0 md:right-0 md:top-[1.15rem] md:bottom-auto md:h-0.5 md:w-auto" aria-hidden="true"></span>
+          <li class="relative pl-14 md:pl-0">
+            <span class="absolute left-0 top-0 md:static grid h-[2.35rem] w-[2.35rem] place-items-center rounded-full bg-teal text-sm font-bold text-white" style="box-shadow: 0 0 0 6px #F6F9F8">1</span>
+            <h3 class="md:mt-6 text-lg font-bold text-ink">Answer a few questions</h3>
+            <p class="mt-2 text-slate">About your team, your tools and what takes up most of your time. It takes a few minutes.</p>
+          </li>
+          <li class="relative pl-14 md:pl-0">
+            <span class="absolute left-0 top-0 md:static grid h-[2.35rem] w-[2.35rem] place-items-center rounded-full bg-white text-sm font-bold text-teal" style="box-shadow: 0 0 0 6px #F6F9F8, inset 0 0 0 2px #0F8A8C">2</span>
+            <h3 class="md:mt-6 text-lg font-bold text-ink">We review your answers</h3>
+            <p class="mt-2 text-slate">We map your answers against what works for businesses like yours and flag the likely quick wins.</p>
+          </li>
+          <li class="relative pl-14 md:pl-0">
+            <span class="absolute left-0 top-0 md:static grid h-[2.35rem] w-[2.35rem] place-items-center rounded-full bg-white text-sm font-bold text-teal" style="box-shadow: 0 0 0 6px #F6F9F8, inset 0 0 0 2px #0F8A8C">3</span>
+            <h3 class="md:mt-6 text-lg font-bold text-ink">You get a first read</h3>
+            <p class="mt-2 text-slate">A short summary of where AI could help you, by email. Then we invite you to a free discovery call to go further.</p>
+          </li>
+        </ol>
+        <a href="https://tally.so/r/PR1v5b" target="_blank" rel="noopener" class="btn btn-teal mt-14">Start your free AI check-up</a>
+      </div>
+    </section>
+
+    <!-- AUDIT TEASER -->
+    <section class="sec bg-white">
+      <div class="mx-auto max-w-wrap px-5 md:px-8">
+        <div class="grid lg:grid-cols-12 gap-10 rounded-[1.75rem] bg-white p-8 md:p-12" style="box-shadow: var(--float), inset 0 0 0 1px #E8EFEE">
+          <div class="lg:col-span-6">
+            <p class="text-sm font-semibold text-teal-deep">When you want the full picture</p>
+            <h2 class="d mt-3 text-[1.9rem] md:text-[2.5rem]">The AI Opportunity Audit</h2>
+            <p class="mt-5 max-w-copy text-slate">In two to three weeks, we look at how your business actually runs, rate every process, hand you a costed plan and set up your first quick win with you. It starts with the free check-up and a free discovery call.</p>
+            <a href="audit.html" class="btn btn-teal mt-8">See what the audit includes</a>
+          </div>
+          <ul class="lg:col-span-6 space-y-4 self-center text-ink">
+            <li class="flex items-start gap-3"><span class="m m-fit mt-[.45rem]"></span>A map of your processes with an AI rating for each</li>
+            <li class="flex items-start gap-3"><span class="m m-fit mt-[.45rem]"></span>Your top three opportunities, with expected time or cost savings</li>
+            <li class="flex items-start gap-3"><span class="m m-fit mt-[.45rem]"></span>The best solution for each opportunity: built by us or recommended</li>
+            <li class="flex items-start gap-3"><span class="m m-fit mt-[.45rem]"></span>A 12-month plan with budgets, and a first step for next week</li>
+            <li class="flex items-start gap-3"><span class="m m-fit mt-[.45rem]"></span>Your first quick win, set up with you in week three</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- BUILT FOR SMEs -->
+    <section class="sec">
+      <div class="mx-auto max-w-wrap px-5 md:px-8 grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div class="relative overflow-hidden rounded-[1.75rem] aspect-[5/4] lg:aspect-[4/5]" style="box-shadow: var(--float)">
+          <img src="https://placehold.co/900x1100/dce6e5/5a6679?text=Team+workshop" alt="Consultant working through processes with a small business team" class="absolute inset-0 h-full w-full object-cover" />
+          <div class="absolute inset-0 bg-[#0F8A8C]/40 mix-blend-multiply"></div>
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent"></div>
+          <p class="absolute inset-x-6 bottom-6 sm:inset-x-8 sm:bottom-8 d text-[1.35rem] !text-white !tracking-[-0.02em] !leading-snug">"Which of our processes could AI actually help with?" Every engagement starts there.</p>
+        </div>
+        <div>
+          <h2 class="d text-[2rem] md:text-[2.75rem]">Built for businesses of 1 to 250 people</h2>
+          <p class="mt-6 max-w-copy text-lg text-slate">From solo founders and teams of under 20 to established businesses of 250. We only work with businesses this size, and that shapes how we work, our pace and how practical our advice is.</p>
+          <ul class="mt-10 space-y-7">
+            <li class="flex gap-4"><span class="m m-fit mt-[.45rem]"></span><div><h3 class="font-bold text-ink">Plain language</h3><p class="text-slate">Written for owners and managers, not engineers.</p></div></li>
+            <li class="flex gap-4"><span class="m m-test mt-[.45rem]"></span><div><h3 class="font-bold text-ink">Independent</h3><p class="text-slate">No vendor partnerships or referral fees. We build or recommend the best solution, whichever gets you the result for less.</p></div></li>
+            <li class="flex gap-4"><span class="m m-no mt-[.45rem]"></span><div><h3 class="font-bold text-ink">Honest about "not yet"</h3><p class="text-slate">If AI isn't the right answer today, we'll say so and explain why.</p></div></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="sec bg-white">
+      <div class="mx-auto max-w-wrap px-5 md:px-8 grid lg:grid-cols-12 gap-10 lg:gap-12">
+        <div class="lg:col-span-4">
+          <h2 class="d text-[2rem] md:text-[2.75rem]">Questions owners ask us</h2>
+          <p class="mt-5 text-slate">Something else? <a href="mailto:hello@example.com" class="lnk text-teal-deep">Email us</a></p>
+        </div>
+        <div class="lg:col-span-8 divide-y divide-haze border-y border-haze">
+          <details class="py-6" open>
+            <summary class="flex items-center justify-between gap-6"><span class="q text-lg font-bold text-ink">Is the check-up really free?</span><span class="pm grid h-9 w-9 shrink-0 place-items-center rounded-full bg-paper text-xl text-teal" aria-hidden="true">+</span></summary>
+            <p class="mt-3 max-w-copy text-slate">Yes. You answer a few questions and get a first read on where AI could help. There's no obligation to buy anything afterwards.</p>
+          </details>
+          <details class="py-6">
+            <summary class="flex items-center justify-between gap-6"><span class="q text-lg font-bold text-ink">Do we need technical staff to work with you?</span><span class="pm grid h-9 w-9 shrink-0 place-items-center rounded-full bg-paper text-xl text-teal" aria-hidden="true">+</span></summary>
+            <p class="mt-3 max-w-copy text-slate">No. We work with owners, managers and the people who do the day-to-day work. Our job is to translate between your business and the technology.</p>
+          </details>
+          <details class="py-6">
+            <summary class="flex items-center justify-between gap-6"><span class="q text-lg font-bold text-ink">What if AI isn't a good fit for us?</span><span class="pm grid h-9 w-9 shrink-0 place-items-center rounded-full bg-paper text-xl text-teal" aria-hidden="true">+</span></summary>
+            <p class="mt-3 max-w-copy text-slate">Then we'll tell you. A clear "not yet", with the reasons and what would change that, is a useful result on its own.</p>
+          </details>
+          <details class="py-6">
+            <summary class="flex items-center justify-between gap-6"><span class="q text-lg font-bold text-ink">What happens after the check-up?</span><span class="pm grid h-9 w-9 shrink-0 place-items-center rounded-full bg-paper text-xl text-teal" aria-hidden="true">+</span></summary>
+            <p class="mt-3 max-w-copy text-slate">You decide. Many owners act on the quick wins themselves. If you want to go further, we talk it through on a free discovery call, including whether the <a href="audit.html" class="lnk text-teal-deep">AI Opportunity Audit</a> is right for you.</p>
+          </details>
+          <details class="py-6">
+            <summary class="flex items-center justify-between gap-6"><span class="q text-lg font-bold text-ink">What happens to our data?</span><span class="pm grid h-9 w-9 shrink-0 place-items-center rounded-full bg-paper text-xl text-teal" aria-hidden="true">+</span></summary>
+            <p class="mt-3 max-w-copy text-slate">We treat it as confidential and only use what the assessment needs. Data protection is part of every recommendation.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section id="contact" class="sec px-4 md:px-8">
+      <div class="ink-bg grain relative mx-auto max-w-wrap overflow-hidden rounded-[2rem] px-7 py-14 sm:px-12 md:px-16 md:py-20" style="box-shadow: var(--float)">
+        <div class="relative z-10 grid lg:grid-cols-12 gap-10 items-end">
+          <div class="lg:col-span-8">
+            <h2 class="d text-[2rem] md:text-[3rem] !text-white">Start with the free AI check&#8209;up</h2>
+            <p class="mt-5 max-w-copy text-lg text-white/70">Answer a few questions about your business. We'll reply with a first read on where AI could help, whether or not we end up working together.</p>
+          </div>
+          <div class="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col gap-3 lg:items-stretch">
+            <a href="https://tally.so/r/PR1v5b" target="_blank" rel="noopener" class="btn btn-white">Start the free check-up</a>
+            <a href="mailto:hello@example.com" class="btn btn-ghost-dark">hello@example.com</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-haze">
+    <div class="mx-auto max-w-wrap px-5 md:px-8 py-10 flex flex-col md:flex-row gap-6 md:items-center justify-between text-sm">
+      <a href="#top" class="lnk flex w-fit items-center gap-2.5 after:!hidden" aria-label="Clarion AI, back to top">
+        <img src="brand_assets/clarion-mark-transparent.png" alt="" class="h-7 w-auto" />
+        <span class="d text-sm !tracking-[0.02em]">CLARION AI</span>
+      </a>
+      <div class="flex flex-wrap gap-x-7 gap-y-2">
+        <a href="#checkup" class="lnk">How it works</a>
+        <a href="audit.html" class="lnk">The audit</a>
+        <a href="#faq" class="lnk">Questions</a>
+        <a href="https://tally.so/r/PR1v5b" target="_blank" rel="noopener" class="lnk">Free check-up</a>
+      </div>
+      <p class="text-slate">© 2026 Clarion AI</p>
+    </div>
+  </footer>
+
+  <script>
+    // [level, task, owner's pain point, what AI does about it]
+    const data = {
+      services: [
+        ['fit', 'Proposals and reports', 'Writing proposals eats my weekends.', 'A structured first draft from your notes, ready to edit.'],
+        ['fit', 'Meeting notes', 'Action points get lost after client calls.', 'Summaries and to-do lists after every call.'],
+        ['test', 'Document review', 'Finding the right clause takes hours.', 'Fast search across your files. You still sign off.'],
+        ['test', 'Time and billing', 'Half our hours never get billed.', 'Timesheets pre-filled from your calendar and email.'],
+        ['no', 'Client advice', 'Clients pay for my judgement.', 'That stays with you. AI shouldn’t advise in your name.'],
+      ],
+      retail: [
+        ['fit', 'Customer questions', 'The same five questions fill my inbox.', 'Draft replies about orders, delivery and returns.'],
+        ['fit', 'Product descriptions', 'Listing new stock takes forever.', 'First drafts written from your product specs.'],
+        ['test', 'Stock planning', 'We keep running out of bestsellers.', 'Sales forecasts, once you have a year of data.'],
+        ['test', 'Bookkeeping', 'Receipts pile up until the accountant calls.', 'Receipts read and expenses sorted for you.'],
+        ['no', 'In-store service', 'Customers come for our advice.', 'Your people are the experience. Keep it that way.'],
+      ],
+      trades: [
+        ['fit', 'Quotes', 'I write quotes at the kitchen table at night.', 'Quotes built from your site notes and photos.'],
+        ['fit', 'Invoices and reminders', 'Chasing payments is a second job.', 'Automatic reminders, and payments matched to invoices.'],
+        ['test', 'Job scheduling', 'Every Monday the planning is a puzzle.', 'Suggested routes and crew plans for the week.'],
+        ['test', 'Safety paperwork', 'Risk assessments slow down every new job.', 'Pre-filled forms for you to check and sign.'],
+        ['no', 'The work on site', 'The job itself needs skilled hands.', 'No shortcut here, and that’s fine.'],
+      ],
+      solo: [
+        ['fit', 'Emails and admin', 'My inbox runs my day.', 'Draft replies, and the messages that need you sorted to the top.'],
+        ['fit', 'Social media posts', 'I know I should post, but there’s never time.', 'A month of post ideas and drafts in your own voice.'],
+        ['test', 'Invoicing and bookkeeping', 'I do the books on Sunday night.', 'Receipts read and invoices prepared for you to check.'],
+        ['test', 'Proposals and quotes', 'Every proposal starts from a blank page.', 'First drafts from your notes and past work.'],
+        ['no', 'Your client relationships', 'Clients buy from me, not from a system.', 'Keep this personal. It’s your edge.'],
+      ],
+      hospitality: [
+        ['fit', 'Bookings and enquiries', 'The phone rings during the dinner rush.', 'Common questions answered at any hour.'],
+        ['fit', 'Review replies', 'We never find time to answer reviews.', 'Replies drafted in your own voice.'],
+        ['test', 'Staff rotas', 'We’re short-staffed exactly when it’s busy.', 'Shift suggestions based on past busy periods.'],
+        ['test', 'Ordering', 'We throw away too much food.', 'Order suggestions that cut waste.'],
+        ['no', 'Welcoming guests', 'Guests come back for the people.', 'Keep this human.'],
+      ],
+    };
+    const label = { fit: 'Strong fit', test: 'Worth testing', no: 'Not yet' };
+    const map = document.getElementById('map');
+    function render(key) {
+      map.innerHTML = data[key].map(([lvl, area, pain, help]) => `
+        <li class="row flex items-start gap-4 py-3.5">
+          <span class="m m-${lvl} mt-[.4rem]" role="img" aria-label="${label[lvl]}"></span>
+          <div class="min-w-0 flex-1">
+            <div class="flex items-baseline justify-between gap-3">
+              <p class="font-semibold leading-snug ${lvl === 'no' ? 'text-slate' : 'text-ink'}">${area}</p>
+              <span class="hidden sm:block shrink-0 text-xs font-semibold ${lvl === 'no' ? 'text-slate' : 'text-teal-deep'}">${label[lvl]}</span>
+            </div>
+            <p class="mt-0.5 text-[0.95rem] leading-snug text-ink/75">“${pain}”</p>
+            <p class="mt-1 text-sm leading-snug text-slate"><span class="font-semibold ${lvl === 'no' ? 'text-slate' : 'text-teal-deep'}">${lvl === 'no' ? 'Our view:' : 'With AI:'}</span> ${help}</p>
+          </div>
+        </li>`).join('');
+      [...map.children].forEach((li, i) => setTimeout(() => li.classList.add('on'), 90 * i + 40));
+    }
+    document.querySelectorAll('.tab').forEach(t => t.addEventListener('click', () => {
+      document.querySelectorAll('.tab').forEach(o => o.setAttribute('aria-selected', o === t));
+      render(t.dataset.s);
+    }));
+    render('services');
+
+    // Signal rings
+    (() => {
+      const hero = document.querySelector('.hero-bg');
+      const wrap = hero.querySelector('.rings');
+      const card = document.getElementById('mapCard');
+      const N = 5, PERIOD = 15000, MAXR = 900;
+      const rings = Array.from({ length: N }, () => wrap.appendChild(Object.assign(document.createElement('div'), { className: 'ring' })));
+      const prev = new Array(N).fill(0);
+      const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+      let o = { x: 0, y: 0 };
+
+      function locate() {
+        const h = hero.getBoundingClientRect(), c = card.getBoundingClientRect();
+        o = { x: c.left - h.left + c.width / 2, y: c.top - h.top + c.height / 2 };
+        wrap.style.transform = `translate(${o.x}px, ${o.y}px)`;
+        return h;
+      }
+      function draw(p, i) {
+        const s = 0.06 + 0.94 * p;
+        const op = Math.min(p / 0.08, 1) * Math.pow(1 - p, 1.5);
+        rings[i].style.transform = `scale(${s})`;
+        rings[i].style.opacity = op.toFixed(3);
+        return { r: s * MAXR, op };
+      }
+      if (reduce) { locate(); rings.forEach((_, i) => draw(0.12 + i * 0.16, i)); addEventListener('resize', locate); return; }
+
+      let running = true, raf = 0;
+      function frame(t) {
+        const h = locate();
+        const dots = [...document.querySelectorAll('#map .row.on .m-fit')].map(d => {
+          const b = d.getBoundingClientRect();
+          return { d, dist: Math.hypot(b.left - h.left + b.width / 2 - o.x, b.top - h.top + b.height / 2 - o.y) };
+        });
+        for (let i = 0; i < N; i++) {
+          const { r, op } = draw(((t / PERIOD) + i / N) % 1, i);
+          if (r > prev[i] && op > 0.15) dots.forEach(({ d, dist }) => {
+            if (dist > prev[i] && dist <= r) { d.classList.remove('ping'); void d.offsetWidth; d.classList.add('ping'); }
+          });
+          prev[i] = r;
+        }
+        raf = requestAnimationFrame(frame);
+      }
+      function setRunning(on) { if (on && !running) { running = true; raf = requestAnimationFrame(frame); } else if (!on && running) { running = false; cancelAnimationFrame(raf); } }
+      new IntersectionObserver(([e]) => setRunning(e.isIntersecting && !document.hidden)).observe(hero);
+      document.addEventListener('visibilitychange', () => setRunning(!document.hidden));
+      raf = requestAnimationFrame(frame);
+    })();
+  </script>
+</body>
+</html>

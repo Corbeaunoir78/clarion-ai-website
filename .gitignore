@@ -1,0 +1,11 @@
+# Dependencies (reinstall with: npm install)
+node_modules/
+
+# Local screenshot output from screenshot.mjs
+temporary screenshots/
+
+# OS / editor clutter
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
