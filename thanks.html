@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Thank you | Clarion AI</title>
+  <meta name="description" content="Your check-up answers have been received." />
+  <meta name="robots" content="noindex" />
+  <link rel="icon" href="brand_assets/clarion-mark-transparent.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@112..125,500..800&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ink: '#0E1A2F', slate: '#5A6679', paper: '#F6F9F8', haze: '#DCE6E5',
+            teal: { DEFAULT: '#0F8A8C', deep: '#0B6668', aqua: '#3ECFC3', wash: '#E3F5F2' },
+          },
+          fontFamily: { display: ['Archivo', 'system-ui', 'sans-serif'], sans: ['"Public Sans"', 'system-ui', 'sans-serif'] },
+          maxWidth: { wrap: '74rem', copy: '38rem' },
+        },
+      },
+    };
+  </script>
+  <style>
+    :root { --spring: cubic-bezier(.34, 1.56, .64, 1); --elev: 0 1px 2px rgba(14,26,47,.05), 0 6px 16px -6px rgba(15,138,140,.12), 0 18px 36px -18px rgba(14,26,47,.14); }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Public Sans', system-ui, sans-serif; font-size: 1.0625rem; line-height: 1.7; color: #2B3850; background: #F6F9F8; -webkit-font-smoothing: antialiased; }
+    .d { font-family: 'Archivo', system-ui, sans-serif; font-stretch: 118%; font-weight: 750; letter-spacing: -0.03em; line-height: 1.04; color: #0E1A2F; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; border-radius: 999px; font-weight: 700; line-height: 1; padding: 1.05rem 1.6rem; transition: transform .45s var(--spring), opacity .2s ease; }
+    .btn:hover { transform: translateY(-2px); }
+    .btn:active { transform: translateY(0) scale(.97); transition-duration: .1s; }
+    .btn-teal { background: #0F8A8C; color: #fff; box-shadow: 0 1px 2px rgba(11,102,104,.3), 0 10px 22px -8px rgba(15,138,140,.55); }
+    :is(.btn, .lnk):focus-visible { outline: 2px solid #3ECFC3; outline-offset: 3px; }
+    .lnk { position: relative; font-weight: 600; border-radius: 3px; transition: opacity .2s ease; }
+    .lnk::after { content: ''; position: absolute; left: 0; right: 0; bottom: -3px; height: 2px; border-radius: 2px; background: #0F8A8C; transform: scaleX(0); transform-origin: left; transition: transform .45s var(--spring); }
+    .lnk:hover::after { transform: scaleX(1); }
+    .lnk:active { opacity: .6; }
+    .prose-doc h2 { font-family: 'Archivo', system-ui, sans-serif; font-stretch: 118%; font-weight: 750; letter-spacing: -0.02em; line-height: 1.15; color: #0E1A2F; font-size: 1.4rem; margin-top: 2.5rem; }
+    .prose-doc p, .prose-doc ul { margin-top: .9rem; }
+    .prose-doc ul { padding-left: 1.2rem; list-style: disc; }
+    .prose-doc li { margin-top: .35rem; }
+    .prose-doc dt { font-weight: 700; color: #0E1A2F; margin-top: 1rem; }
+    .prose-doc dd { margin: 0; }
+    .prose-doc a:not(.btn) { color: #0B6668; font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition-duration: .01ms !important; animation: none !important; } }
+  </style>
+</head>
+<body>
+
+  <header class="fixed inset-x-0 top-0 z-50 px-4 md:px-8 pt-4">
+    <nav class="mx-auto max-w-wrap flex items-center justify-between rounded-full bg-white/80 backdrop-blur-xl pl-4 pr-2 py-2" style="box-shadow: var(--elev), inset 0 0 0 1px rgba(220,230,229,.9)">
+      <a href="index.html" class="lnk flex items-center gap-2.5 after:!hidden" aria-label="Clarion AI home">
+        <img src="brand_assets/clarion-mark-transparent.png" alt="" class="h-8 w-auto" />
+        <span class="d text-[0.95rem] !tracking-[0.02em] !leading-none">CLARION AI</span>
+      </a>
+      <a href="https://tally.so/r/PR1v5b" target="_blank" rel="noopener" class="btn btn-teal !py-3 !px-5 text-sm">Free AI check-up</a>
+    </nav>
+  </header>
+
+  <main class="mx-auto max-w-wrap px-5 md:px-8 pt-32 md:pt-44 pb-28">
+    <div class="max-w-copy">
+      <h1 class="d text-[2.25rem] md:text-[3rem]">Thank you, we have your answers.</h1>
+      <p class="mt-6 text-lg text-slate">We will review them and email you a first read on where AI could help your business. If nothing arrives, check your spam folder or email us.</p>
+      <a href="index.html" class="btn btn-teal mt-10">Back to the home page</a>
+    </div>
+  </main>
+
+  <footer class="border-t border-haze">
+    <div class="mx-auto max-w-wrap px-5 md:px-8 py-10 flex flex-col md:flex-row gap-6 md:items-center justify-between text-sm">
+      <a href="index.html" class="lnk flex w-fit items-center gap-2.5 after:!hidden" aria-label="Clarion AI home">
+        <img src="brand_assets/clarion-mark-transparent.png" alt="" class="h-7 w-auto" />
+        <span class="d text-sm !tracking-[0.02em]">CLARION AI</span>
+      </a>
+      <div class="flex flex-wrap gap-x-7 gap-y-2">
+        <a href="index.html" class="lnk">Home</a>
+        <a href="audit.html" class="lnk">The audit</a>
+        <a href="legal.html" class="lnk">Legal notice</a>
+        <a href="privacy.html" class="lnk">Privacy</a>
+      </div>
+      <p class="text-slate">© 2026 Clarion AI</p>
+    </div>
+  </footer>
+</body>
+</html>
