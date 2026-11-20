@@ -1,0 +1,482 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Clarion AI | Trouvez où l’IA a sa place dans votre entreprise</title>
+  <meta name="description" content="Clarion AI aide les petites entreprises, des indépendants aux équipes de 250 personnes, à trouver où l’IA aide vraiment, et où elle n’aide pas. Commencez par un check-up IA gratuit." />
+  <link rel="alternate" hreflang="en" href="https://clarion-ai-website-alpha.vercel.app/index.html" />
+  <link rel="alternate" hreflang="fr" href="https://clarion-ai-website-alpha.vercel.app/fr/index.html" />
+  <link rel="alternate" hreflang="x-default" href="https://clarion-ai-website-alpha.vercel.app/index.html" />
+  <link rel="icon" href="../brand_assets/clarion-mark-transparent.png" />
+  <meta name="theme-color" content="#0E1A2F" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:site_name" content="Clarion AI" />
+  <meta property="og:title" content="Clarion AI | Trouvez où l’IA a sa place dans votre entreprise" />
+  <meta property="og:description" content="Un regard honnête, indépendant des fournisseurs, sur ce que l’IA peut faire pour votre entreprise, et ce qu’elle ne peut pas faire. Commencez par un check-up IA gratuit." />
+  <meta property="og:image" content="https://clarion-ai-website-alpha.vercel.app/brand_assets/clarion-lockup.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@112..125,500..800&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ink: '#0E1A2F', slate: '#5A6679', paper: '#F6F9F8', haze: '#DCE6E5',
+            teal: { DEFAULT: '#0F8A8C', deep: '#0B6668', aqua: '#3ECFC3', wash: '#E3F5F2' },
+            off: '#B7C1C6',
+          },
+          fontFamily: { display: ['Archivo', 'system-ui', 'sans-serif'], sans: ['"Public Sans"', 'system-ui', 'sans-serif'] },
+          maxWidth: { wrap: '74rem', copy: '38rem' },
+        },
+      },
+    };
+  </script>
+  <style>
+    :root {
+      --spring: cubic-bezier(.34, 1.56, .64, 1);
+      --out: cubic-bezier(.22, 1, .36, 1);
+      --elev: 0 1px 2px rgba(14,26,47,.05), 0 6px 16px -6px rgba(15,138,140,.12), 0 18px 36px -18px rgba(14,26,47,.14);
+      --float: 0 2px 4px rgba(14,26,47,.05), 0 14px 28px -8px rgba(15,138,140,.18), 0 40px 72px -24px rgba(14,26,47,.28);
+      --sec: 6rem;
+    }
+    @media (min-width: 768px) { :root { --sec: 8.5rem; } }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Public Sans', system-ui, sans-serif; font-size: 1.0625rem; line-height: 1.7; color: #2B3850; background: #F6F9F8; -webkit-font-smoothing: antialiased; }
+    .d { font-family: 'Archivo', system-ui, sans-serif; font-stretch: 118%; font-weight: 750; letter-spacing: -0.03em; line-height: 1.04; color: #0E1A2F; }
+    .sec { padding-block: var(--sec); }
+
+    .m { display: inline-block; width: .875rem; height: .875rem; border-radius: 999px; flex-shrink: 0; }
+    .m-fit { background: #0F8A8C; box-shadow: 0 0 0 3px rgba(62,207,195,.25); }
+    .m-test { background: linear-gradient(90deg, #0F8A8C 50%, transparent 50%); box-shadow: inset 0 0 0 2px #0F8A8C; }
+    .m-no { box-shadow: inset 0 0 0 2px #B7C1C6; }
+
+    .grain::after { content: ''; position: absolute; inset: 0; pointer-events: none; opacity: .3; mix-blend-mode: soft-light;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .6 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+    .hero-bg { background:
+      radial-gradient(52rem 32rem at 92% 8%, rgba(62,207,195,.26), transparent 62%),
+      radial-gradient(36rem 28rem at 0% 0%, rgba(15,138,140,.10), transparent 60%),
+      radial-gradient(44rem 22rem at 55% 105%, rgba(220,230,229,.9), transparent 70%),
+      #F6F9F8; }
+    .ink-bg { background:
+      radial-gradient(36rem 24rem at 100% 0%, rgba(62,207,195,.20), transparent 60%),
+      radial-gradient(30rem 22rem at 0% 100%, rgba(15,138,140,.32), transparent 62%),
+      #0E1A2F; }
+
+    .btn { display: inline-flex; align-items: center; justify-content: center; border-radius: 999px; font-weight: 700; line-height: 1; padding: 1.05rem 1.6rem;
+      transition: transform .45s var(--spring), opacity .2s ease; }
+    .btn:hover { transform: translateY(-2px); }
+    .btn:active { transform: translateY(0) scale(.97); transition-duration: .1s; }
+    .btn-teal { background: #0F8A8C; color: #fff; box-shadow: 0 1px 2px rgba(11,102,104,.3), 0 10px 22px -8px rgba(15,138,140,.55); }
+    .btn-line { color: #0E1A2F; box-shadow: inset 0 0 0 1.5px #C9D6D5; background: rgba(255,255,255,.6); }
+    .btn-white { background: #fff; color: #0E1A2F; }
+    .btn-ghost-dark { color: #fff; box-shadow: inset 0 0 0 1.5px rgba(255,255,255,.28); }
+    :is(.btn, .lnk, .tab, summary):focus-visible { outline: 2px solid #3ECFC3; outline-offset: 3px; }
+    .lnk { position: relative; font-weight: 600; border-radius: 3px; transition: opacity .2s ease; }
+    .lnk::after { content: ''; position: absolute; left: 0; right: 0; bottom: -3px; height: 2px; border-radius: 2px; background: #0F8A8C; transform: scaleX(0); transform-origin: left; transition: transform .45s var(--spring); }
+    .lnk:hover::after { transform: scaleX(1); }
+    .lnk:active { opacity: .6; }
+
+    .tab { position: relative; flex: 1 1 auto; white-space: nowrap; padding: .55rem .75rem; border-radius: 999px; font-size: .9rem; font-weight: 600; color: #5A6679; transition: transform .4s var(--spring), opacity .2s ease; }
+    .tab:hover { opacity: .75; }
+    .tab:active { transform: scale(.96); }
+    .tab[aria-selected="true"] { background: #0E1A2F; color: #fff; }
+    .tab[aria-selected="true"]:hover { opacity: 1; }
+
+    .row { opacity: 0; transform: translateY(8px); transition: opacity .5s var(--out), transform .6s var(--out); }
+    .row.on { opacity: 1; transform: none; }
+
+    /* Signal rings: echo the logo's concentric arcs, rippling out from the map card */
+    .rings { position: absolute; left: 0; top: 0; width: 0; height: 0; z-index: 0; pointer-events: none; }
+    .ring { position: absolute; left: -900px; top: -900px; width: 1800px; height: 1800px; border-radius: 50%;
+      border: 2.5px solid rgba(15,138,140,.5); opacity: 0; will-change: transform, opacity; }
+    .ring:nth-child(even) { border-color: rgba(62,207,195,.65); border-width: 4px; }
+    .core { position: absolute; left: -340px; top: -340px; width: 680px; height: 680px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(62,207,195,.30), rgba(62,207,195,0) 65%); }
+    #map .m-fit { position: relative; }
+    #map .m-fit::after { content: ''; position: absolute; inset: -5px; border-radius: 50%; background: rgba(62,207,195,.6); opacity: 0; transform: scale(.6); }
+    #map .m-fit.ping { animation: pop .7s var(--spring); }
+    #map .m-fit.ping::after { animation: halo 1.2s var(--out); }
+    @keyframes pop { 0% { transform: scale(1) } 35% { transform: scale(1.35) } 100% { transform: scale(1) } }
+    @keyframes halo { 0% { opacity: .9; transform: scale(.6) } 100% { opacity: 0; transform: scale(2.6) } }
+
+    /* Pain-point cards: lift, fill and reveal "Il y a une solution" on hover */
+    .pcard { position: relative; border-radius: 1.5rem; background: #F6F9F8; padding: 1.75rem 1.75rem 2rem; box-shadow: inset 0 0 0 1px #DCE6E5; transition: transform .55s var(--spring); }
+    .pcard::before { content: ''; position: absolute; inset: 0; border-radius: inherit; background: #fff; box-shadow: var(--float), inset 0 0 0 1px #E8EFEE; opacity: 0; transition: opacity .35s ease; }
+    .pcard > * { position: relative; }
+    .pcard:hover { transform: translateY(-6px); }
+    .pcard:hover::before { opacity: 1; }
+    .pcard .bar { position: absolute; left: 1.75rem; right: 1.75rem; top: 0; height: 3px; border-radius: 0 0 3px 3px; background: linear-gradient(90deg, #0F8A8C, #3ECFC3); transform: scaleX(0); transform-origin: left; transition: transform .6s var(--spring); }
+    .pcard:hover .bar { transform: scaleX(1); }
+    .pfix { display: flex; align-items: center; gap: .6rem; height: 1rem; font-size: .8125rem; font-weight: 600; color: #0B6668; }
+    .pdot { position: relative; width: .875rem; height: .875rem; }
+    .pdot .m { position: absolute; inset: 0; transition: opacity .3s ease, transform .5s var(--spring); }
+    .pdot .m-fit { opacity: 0; transform: scale(.3); }
+    .pcard:hover .pdot .m-fit { opacity: 1; transform: scale(1); }
+    .pcard:hover .pdot .m-no { opacity: 0; }
+    .ptxt { opacity: 0; transform: translateX(-6px); transition: opacity .3s ease .05s, transform .5s var(--spring) .05s; }
+    .pcard:hover .ptxt { opacity: 1; transform: none; }
+    @media (hover: none) { .pdot .m-fit, .ptxt { opacity: 1; transform: none; } .pdot .m-no { opacity: 0; } }
+
+    details summary { list-style: none; cursor: pointer; border-radius: 6px; }
+    details summary::-webkit-details-marker { display: none; }
+    details summary .q { transition: opacity .2s ease; }
+    details summary:hover .q { opacity: .7; }
+    details summary:active .q { opacity: .5; }
+    details .pm { transition: transform .45s var(--spring); }
+    details[open] .pm { transform: rotate(45deg); }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { transition-duration: .01ms !important; animation: none !important; }
+      .row { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <header id="top" class="fixed inset-x-0 top-0 z-50 px-4 md:px-8 pt-4">
+    <nav class="mx-auto max-w-wrap flex items-center justify-between rounded-full bg-white/80 backdrop-blur-xl pl-4 pr-2 py-2" style="box-shadow: var(--elev), inset 0 0 0 1px rgba(220,230,229,.9)">
+      <a href="#top" class="lnk flex items-center gap-2.5 after:!hidden" aria-label="Clarion AI, retour en haut">
+        <img src="../brand_assets/clarion-mark-transparent.png" alt="" class="h-8 w-auto" />
+        <span class="d whitespace-nowrap text-[0.95rem] !tracking-[0.02em] !leading-none">CLARION AI</span>
+      </a>
+      <div class="hidden md:flex items-center gap-8 text-[0.95rem]">
+        <a href="#pains" class="lnk">Ça vous parle ?</a>
+        <a href="#checkup" class="lnk">Comment ça marche</a>
+        <a href="audit.html" class="lnk">L’audit</a>
+        <a href="#faq" class="lnk">Questions</a>
+      </div>
+      <div class="flex items-center gap-3 sm:gap-4"><a href="../index.html" hreflang="en" lang="en" class="lnk text-sm" aria-label="English version">EN</a><a href="https://tally.so/r/5XjEAb" target="_blank" rel="noopener" class="btn btn-teal !py-3 !px-5 text-sm whitespace-nowrap">Check-up<span class="hidden sm:inline">&nbsp;gratuit</span></a></div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero-bg grain relative overflow-hidden">
+      <div class="rings" aria-hidden="true"><div class="core"></div></div>
+      <div class="relative z-10 mx-auto max-w-wrap px-5 md:px-8 pt-28 md:pt-32 pb-20 md:pb-28 grid lg:grid-cols-12 gap-14 lg:gap-10 items-center">
+        <div class="lg:col-span-6">
+          <h1 class="d text-[2.35rem] sm:text-[3.25rem] lg:text-[3.6rem]">Trouvez où l’IA a sa place dans votre entreprise, et où elle n’en a pas.</h1>
+          <p class="mt-7 max-w-copy text-lg text-slate">Nous aidons les petites entreprises, des indépendants aux équipes de 250 personnes, à distinguer l’IA qui vaut la peine du simple effet de mode. Vous obtenez un diagnostic honnête, indépendant des fournisseurs, en langage clair, et un plan précis de ce qu’il faut faire en premier.</p>
+          <div class="mt-10 flex flex-wrap gap-3">
+            <a href="https://tally.so/r/5XjEAb" target="_blank" rel="noopener" class="btn btn-teal">Commencez votre check-up IA gratuit</a>
+            <a href="#checkup" class="btn btn-line">Voir comment ça marche</a>
+          </div>
+          <p class="mt-6 text-sm text-slate">Quelques minutes suffisent. Gratuit, sans engagement.</p>
+        </div>
+
+        <div class="lg:col-span-6">
+          <div id="mapCard" class="rounded-[1.75rem] bg-white p-5 sm:p-7" style="box-shadow: var(--float), inset 0 0 0 1px #E8EFEE">
+            <div class="flex flex-wrap items-baseline justify-between gap-2">
+              <h2 class="d text-xl !tracking-[-0.02em]">Là où l’IA est généralement utile</h2>
+              <p class="text-sm text-slate">Choisissez votre type d’activité</p>
+            </div>
+            <div class="mt-4 grid grid-cols-2 sm:flex gap-1 rounded-[1.25rem] sm:rounded-full bg-paper p-1" role="tablist" aria-label="Type d’activité">
+              <button class="tab" role="tab" aria-selected="true" data-s="services">Services</button>
+              <button class="tab" role="tab" aria-selected="false" data-s="retail">Commerces</button>
+              <button class="tab" role="tab" aria-selected="false" data-s="trades">Artisans</button>
+              <button class="tab" role="tab" aria-selected="false" data-s="hospitality">Restauration &amp; hôtellerie</button>
+              <button class="tab col-span-2 sm:col-span-1" role="tab" aria-selected="false" data-s="solo">Indépendants &amp; micro</button>
+            </div>
+            <ul id="map" class="mt-5 divide-y divide-haze" aria-live="polite"></ul>
+            <div class="mt-5 flex flex-wrap items-center gap-x-5 gap-y-2 border-t border-haze pt-4 text-sm text-slate">
+              <span class="flex items-center gap-2"><span class="m m-fit"></span>Bien adapté</span>
+              <span class="flex items-center gap-2"><span class="m m-test"></span>À tester</span>
+              <span class="flex items-center gap-2"><span class="m m-no"></span>Pas encore</span>
+            </div>
+          </div>
+          <p class="mt-4 px-2 text-sm text-slate">Un schéma courant, pas votre diagnostic. Le check-up gratuit examine votre entreprise en particulier.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAIN POINTS -->
+    <section id="pains" class="sec bg-white">
+      <div class="mx-auto max-w-wrap px-5 md:px-8">
+        <h2 class="d max-w-3xl text-[2rem] md:text-[2.75rem]">Ça vous parle ?</h2>
+        <p class="mt-5 max-w-copy text-lg text-slate">Voici ce que les dirigeants nous disent dans les cinq premières minutes de chaque conversation.</p>
+        <div class="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="pcard"><span class="bar" aria-hidden="true"></span><div class="pfix" aria-hidden="true"><span class="pdot"><span class="m m-no"></span><span class="m m-fit"></span></span><span class="ptxt">Il y a une solution</span></div>
+            <p class="mt-5 d text-[1.3rem] !leading-tight !tracking-[-0.02em]">« L’administratif mange mes soirées. »</p>
+            <p class="mt-3 text-slate">Devis, factures et e-mails se font après les heures de travail, quand vous devriez vous reposer ou développer l’entreprise.</p>
+          </div>
+          <div class="pcard"><span class="bar" aria-hidden="true"></span><div class="pfix" aria-hidden="true"><span class="pdot"><span class="m m-no"></span><span class="m m-fit"></span></span><span class="ptxt">Il y a une solution</span></div>
+            <p class="mt-5 d text-[1.3rem] !leading-tight !tracking-[-0.02em]">« On répond aux mêmes questions toute la journée. »</p>
+            <p class="mt-3 text-slate">Votre équipe passe des heures sur des demandes répétitives au lieu de s’occuper des clients qui ont vraiment besoin d’attention.</p>
+          </div>
+          <div class="pcard"><span class="bar" aria-hidden="true"></span><div class="pfix" aria-hidden="true"><span class="pdot"><span class="m m-no"></span><span class="m m-fit"></span></span><span class="ptxt">Il y a une solution</span></div>
+            <p class="mt-5 d text-[1.3rem] !leading-tight !tracking-[-0.02em]">« L’argent nous file entre les doigts. »</p>
+            <p class="mt-3 text-slate">Heures non facturées, retards de paiement, stock inutile. De petites fuites qui s’additionnent chaque mois.</p>
+          </div>
+          <div class="pcard"><span class="bar" aria-hidden="true"></span><div class="pfix" aria-hidden="true"><span class="pdot"><span class="m m-no"></span><span class="m m-fit"></span></span><span class="ptxt">Il y a une solution</span></div>
+            <p class="mt-5 d text-[1.3rem] !leading-tight !tracking-[-0.02em]">« On est à flux tendu. »</p>
+            <p class="mt-3 text-slate">Que vous soyez seul ou une équipe de vingt, il n’y a jamais assez de bras, et recruter est long et coûteux.</p>
+          </div>
+          <div class="pcard"><span class="bar" aria-hidden="true"></span><div class="pfix" aria-hidden="true"><span class="pdot"><span class="m m-no"></span><span class="m m-fit"></span></span><span class="ptxt">Il y a une solution</span></div>
+            <p class="mt-5 d text-[1.3rem] !leading-tight !tracking-[-0.02em]">« Tout le monde dit d’utiliser l’IA. Personne ne dit où. »</p>
+            <p class="mt-3 text-slate">On vous parle d’IA tous les jours, mais personne n’a regardé votre entreprise pour vous dire par où commencer.</p>
+          </div>
+          <div class="pcard"><span class="bar" aria-hidden="true"></span><div class="pfix" aria-hidden="true"><span class="pdot"><span class="m m-no"></span><span class="m m-fit"></span></span><span class="ptxt">Il y a une solution</span></div>
+            <p class="mt-5 d text-[1.3rem] !leading-tight !tracking-[-0.02em]">« On a acheté un outil. Personne ne s’en sert. »</p>
+            <p class="mt-3 text-slate">Un abonnement prometteur lors de la démo, qui se renouvelle désormais discrètement chaque mois.</p>
+          </div>
+        </div>
+        <div class="mt-16 flex flex-col md:flex-row md:items-center justify-between gap-8 rounded-[1.75rem] bg-paper p-8 md:p-10" style="box-shadow: inset 0 0 0 1px #DCE6E5">
+          <p class="max-w-2xl text-xl text-ink">Chacun de ces problèmes a une solution. Certaines passent par l’IA, d’autres non. Le check-up gratuit vous dit lesquelles, pour votre entreprise.</p>
+          <a href="https://tally.so/r/5XjEAb" target="_blank" rel="noopener" class="btn btn-teal shrink-0">Commencez votre check-up IA gratuit</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW THE CHECK-UP WORKS -->
+    <section id="checkup" class="sec">
+      <div class="mx-auto max-w-wrap px-5 md:px-8">
+        <h2 class="d max-w-3xl text-[2rem] md:text-[2.75rem]">Comment fonctionne le check&#8209;up gratuit</h2>
+        <p class="mt-5 max-w-copy text-lg text-slate">Aucun appel à réserver, aucun engagement. Quelques questions et une réponse honnête.</p>
+        <ol class="relative mt-16 grid md:grid-cols-3 gap-10">
+          <span class="absolute left-[1.15rem] top-2 bottom-24 w-0.5 bg-haze md:left-0 md:right-0 md:top-[1.15rem] md:bottom-auto md:h-0.5 md:w-auto" aria-hidden="true"></span>
+          <li class="relative pl-14 md:pl-0">
+            <span class="absolute left-0 top-0 md:static grid h-[2.35rem] w-[2.35rem] place-items-center rounded-full bg-teal text-sm font-bold text-white" style="box-shadow: 0 0 0 6px #F6F9F8">1</span>
+            <h3 class="md:mt-6 text-lg font-bold text-ink">Répondez à quelques questions</h3>
+            <p class="mt-2 text-slate">Sur votre équipe, vos outils et ce qui vous prend le plus de temps. Quelques minutes suffisent.</p>
+          </li>
+          <li class="relative pl-14 md:pl-0">
+            <span class="absolute left-0 top-0 md:static grid h-[2.35rem] w-[2.35rem] place-items-center rounded-full bg-white text-sm font-bold text-teal" style="box-shadow: 0 0 0 6px #F6F9F8, inset 0 0 0 2px #0F8A8C">2</span>
+            <h3 class="md:mt-6 text-lg font-bold text-ink">Nous analysons vos réponses</h3>
+            <p class="mt-2 text-slate">Nous comparons vos réponses à ce qui fonctionne pour des entreprises comme la vôtre et repérons les gains rapides probables.</p>
+          </li>
+          <li class="relative pl-14 md:pl-0">
+            <span class="absolute left-0 top-0 md:static grid h-[2.35rem] w-[2.35rem] place-items-center rounded-full bg-white text-sm font-bold text-teal" style="box-shadow: 0 0 0 6px #F6F9F8, inset 0 0 0 2px #0F8A8C">3</span>
+            <h3 class="md:mt-6 text-lg font-bold text-ink">Vous recevez un premier avis</h3>
+            <p class="mt-2 text-slate">Un court résumé de ce que l’IA pourrait vous apporter, par e-mail. Nous vous invitons ensuite à un appel découverte gratuit pour aller plus loin.</p>
+          </li>
+        </ol>
+        <a href="https://tally.so/r/5XjEAb" target="_blank" rel="noopener" class="btn btn-teal mt-14">Commencez votre check-up IA gratuit</a>
+      </div>
+    </section>
+
+    <!-- AUDIT TEASER -->
+    <section class="sec bg-white">
+      <div class="mx-auto max-w-wrap px-5 md:px-8">
+        <div class="grid lg:grid-cols-12 gap-10 rounded-[1.75rem] bg-white p-8 md:p-12" style="box-shadow: var(--float), inset 0 0 0 1px #E8EFEE">
+          <div class="lg:col-span-6">
+            <p class="text-sm font-semibold text-teal-deep">Pour avoir la vue d’ensemble</p>
+            <h2 class="d mt-3 text-[1.9rem] md:text-[2.5rem]">L’Audit d’opportunités IA</h2>
+            <p class="mt-5 max-w-copy text-slate">En deux à trois semaines, nous observons comment votre entreprise fonctionne réellement, évaluons chaque processus, vous remettons un plan chiffré et mettons en place avec vous votre premier gain rapide. Tout commence par le check-up gratuit et un appel découverte gratuit.</p>
+            <a href="audit.html" class="btn btn-teal mt-8">Voir ce que comprend l’audit</a>
+          </div>
+          <ul class="lg:col-span-6 space-y-4 self-center text-ink">
+            <li class="flex items-start gap-3"><span class="m m-fit mt-[.45rem]"></span>Une cartographie de vos processus, avec une note IA pour chacun</li>
+            <li class="flex items-start gap-3"><span class="m m-fit mt-[.45rem]"></span>Vos trois principales opportunités, avec les gains de temps ou d’argent attendus</li>
+            <li class="flex items-start gap-3"><span class="m m-fit mt-[.45rem]"></span>La meilleure solution pour chaque opportunité : construite par nous ou recommandée</li>
+            <li class="flex items-start gap-3"><span class="m m-fit mt-[.45rem]"></span>Un plan sur 12 mois avec budgets, et une première étape dès la semaine prochaine</li>
+            <li class="flex items-start gap-3"><span class="m m-fit mt-[.45rem]"></span>Votre premier gain rapide, mis en place avec vous en semaine trois</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- BUILT FOR SMEs -->
+    <section class="sec">
+      <div class="mx-auto max-w-wrap px-5 md:px-8 grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div class="relative overflow-hidden rounded-[1.75rem] aspect-[5/4] lg:aspect-[4/5]" style="box-shadow: var(--float)">
+          <div class="ink-bg grain absolute inset-0"></div>
+          <img src="../brand_assets/clarion-mark-transparent.png" alt="" class="absolute right-8 top-8 h-24 w-auto opacity-90" />
+          <p class="absolute inset-x-6 bottom-6 sm:inset-x-8 sm:bottom-8 d text-[1.35rem] !text-white !tracking-[-0.02em] !leading-snug">« Lesquels de nos processus l’IA pourrait-elle vraiment améliorer ? » Chaque mission commence par cette question.</p>
+        </div>
+        <div>
+          <h2 class="d text-[2rem] md:text-[2.75rem]">Conçu pour les entreprises de 1 à 250 personnes</h2>
+          <p class="mt-6 max-w-copy text-lg text-slate">Des indépendants et équipes de moins de 20 personnes aux entreprises établies de 250. Nous ne travaillons qu’avec des entreprises de cette taille, ce qui façonne notre méthode, notre rythme et le côté concret de nos conseils.</p>
+          <ul class="mt-10 space-y-7">
+            <li class="flex gap-4"><span class="m m-fit mt-[.45rem]"></span><div><h3 class="font-bold text-ink">Langage clair</h3><p class="text-slate">Écrit pour les dirigeants et les managers, pas pour les ingénieurs.</p></div></li>
+            <li class="flex gap-4"><span class="m m-test mt-[.45rem]"></span><div><h3 class="font-bold text-ink">Indépendant</h3><p class="text-slate">Aucun partenariat avec des fournisseurs, aucune commission. Nous construisons ou recommandons la meilleure solution, celle qui vous donne le résultat au meilleur coût.</p></div></li>
+            <li class="flex gap-4"><span class="m m-no mt-[.45rem]"></span><div><h3 class="font-bold text-ink">Honnête sur le « pas encore »</h3><p class="text-slate">Si l’IA n’est pas la bonne réponse aujourd’hui, nous vous le dirons et expliquerons pourquoi.</p></div></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="sec bg-white">
+      <div class="mx-auto max-w-wrap px-5 md:px-8 grid lg:grid-cols-12 gap-10 lg:gap-12">
+        <div class="lg:col-span-4">
+          <h2 class="d text-[2rem] md:text-[2.75rem]">Les questions que les dirigeants nous posent</h2>
+          <p class="mt-5 text-slate">Une autre question ? <a href="mailto:ai.clarion.consult@gmail.com" class="lnk text-teal-deep">Écrivez-nous</a></p>
+        </div>
+        <div class="lg:col-span-8 divide-y divide-haze border-y border-haze">
+          <details class="py-6" open>
+            <summary class="flex items-center justify-between gap-6"><span class="q text-lg font-bold text-ink">Le check-up est-il vraiment gratuit ?</span><span class="pm grid h-9 w-9 shrink-0 place-items-center rounded-full bg-paper text-xl text-teal" aria-hidden="true">+</span></summary>
+            <p class="mt-3 max-w-copy text-slate">Oui. Vous répondez à quelques questions et recevez un premier avis sur ce que l’IA pourrait vous apporter. Aucune obligation d’acheter quoi que ce soit ensuite.</p>
+          </details>
+          <details class="py-6">
+            <summary class="flex items-center justify-between gap-6"><span class="q text-lg font-bold text-ink">Faut-il du personnel technique pour travailler avec vous ?</span><span class="pm grid h-9 w-9 shrink-0 place-items-center rounded-full bg-paper text-xl text-teal" aria-hidden="true">+</span></summary>
+            <p class="mt-3 max-w-copy text-slate">Non. Nous travaillons avec les dirigeants, les managers et les personnes qui font le travail au quotidien. Notre rôle est de faire le lien entre votre activité et la technologie.</p>
+          </details>
+          <details class="py-6">
+            <summary class="flex items-center justify-between gap-6"><span class="q text-lg font-bold text-ink">Et si l’IA ne nous convient pas ?</span><span class="pm grid h-9 w-9 shrink-0 place-items-center rounded-full bg-paper text-xl text-teal" aria-hidden="true">+</span></summary>
+            <p class="mt-3 max-w-copy text-slate">Nous vous le dirons. Un « pas encore » clair, avec les raisons et ce qui pourrait changer la donne, est déjà un résultat utile.</p>
+          </details>
+          <details class="py-6">
+            <summary class="flex items-center justify-between gap-6"><span class="q text-lg font-bold text-ink">Que se passe-t-il après le check-up ?</span><span class="pm grid h-9 w-9 shrink-0 place-items-center rounded-full bg-paper text-xl text-teal" aria-hidden="true">+</span></summary>
+            <p class="mt-3 max-w-copy text-slate">C’est vous qui décidez. Beaucoup de dirigeants appliquent eux-mêmes les gains rapides. Si vous voulez aller plus loin, nous en discutons lors d’un appel découverte gratuit, y compris pour savoir si l’<a href="audit.html" class="lnk text-teal-deep">Audit d’opportunités IA</a> vous convient.</p>
+          </details>
+          <details class="py-6">
+            <summary class="flex items-center justify-between gap-6"><span class="q text-lg font-bold text-ink">Que deviennent nos données ?</span><span class="pm grid h-9 w-9 shrink-0 place-items-center rounded-full bg-paper text-xl text-teal" aria-hidden="true">+</span></summary>
+            <p class="mt-3 max-w-copy text-slate">Nous les traitons de façon confidentielle et n’utilisons que ce dont l’évaluation a besoin. La protection des données fait partie de chaque recommandation.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section id="contact" class="sec px-4 md:px-8">
+      <div class="ink-bg grain relative mx-auto max-w-wrap overflow-hidden rounded-[2rem] px-7 py-14 sm:px-12 md:px-16 md:py-20" style="box-shadow: var(--float)">
+        <div class="relative z-10 grid lg:grid-cols-12 gap-10 items-end">
+          <div class="lg:col-span-8">
+            <h2 class="d text-[2rem] md:text-[3rem] !text-white">Commencez par le check&#8209;up IA gratuit</h2>
+            <p class="mt-5 max-w-copy text-lg text-white/70">Répondez à quelques questions sur votre entreprise. Nous vous répondrons avec un premier avis sur ce que l’IA pourrait vous apporter, que nous travaillions ensemble ou non.</p>
+          </div>
+          <div class="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col gap-3 lg:items-stretch">
+            <a href="https://tally.so/r/5XjEAb" target="_blank" rel="noopener" class="btn btn-white">Commencer le check-up gratuit</a>
+            <a href="https://calendly.com/ai-clarion-consult/clarion-ai-discovery-call" target="_blank" rel="noopener" class="btn btn-ghost-dark">Réserver un appel gratuit de 20&#8209;minutes</a>
+            <a href="mailto:ai.clarion.consult@gmail.com" class="btn btn-ghost-dark">ai.clarion.consult@gmail.com</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-haze">
+    <div class="mx-auto max-w-wrap px-5 md:px-8 py-10 flex flex-col md:flex-row gap-6 md:items-center justify-between text-sm">
+      <a href="#top" class="lnk flex w-fit items-center gap-2.5 after:!hidden" aria-label="Clarion AI, retour en haut">
+        <img src="../brand_assets/clarion-mark-transparent.png" alt="" class="h-7 w-auto" />
+        <span class="d text-sm !tracking-[0.02em]">CLARION AI</span>
+      </a>
+      <div class="flex flex-wrap gap-x-7 gap-y-2">
+        <a href="#checkup" class="lnk">Comment ça marche</a>
+        <a href="audit.html" class="lnk">L’audit</a>
+        <a href="#faq" class="lnk">Questions</a>
+        <a href="https://tally.so/r/5XjEAb" target="_blank" rel="noopener" class="lnk">Check-up gratuit</a>
+        <a href="legal.html" class="lnk">Mentions légales</a>
+        <a href="privacy.html" class="lnk">Confidentialité</a>
+      </div>
+      <p class="text-slate">© 2026 Clarion AI</p>
+    </div>
+  </footer>
+
+  <script>
+    // [level, task, owner's pain point, what AI does about it]
+    const data = {
+      services: [
+        ["fit", "Propositions et rapports", "Rédiger des propositions me prend mes week-ends.", "Un premier jet structuré à partir de vos notes, prêt à être retouché."],
+        ["fit", "Comptes rendus de réunion", "Les points d’action se perdent après les appels clients.", "Résumés et listes de tâches après chaque appel."],
+        ["test", "Revue de documents", "Trouver la bonne clause prend des heures.", "Recherche rapide dans vos fichiers. C’est vous qui validez."],
+        ["test", "Temps et facturation", "La moitié de nos heures n’est jamais facturée.", "Feuilles de temps pré-remplies à partir de votre agenda et de vos e-mails."],
+        ["no", "Conseil aux clients", "Les clients paient pour mon jugement.", "Cela reste avec vous. L’IA ne doit pas conseiller en votre nom."],
+      ],
+      retail: [
+        ["fit", "Questions clients", "Les cinq mêmes questions remplissent ma boîte mail.", "Brouillons de réponses sur les commandes, la livraison et les retours."],
+        ["fit", "Fiches produits", "Référencer de nouveaux articles prend une éternité.", "Premiers textes rédigés à partir de vos fiches techniques."],
+        ["test", "Gestion des stocks", "On est toujours en rupture sur nos best-sellers.", "Prévisions de ventes, dès que vous avez un an de données."],
+        ["test", "Comptabilité", "Les tickets s’empilent jusqu’à l’appel du comptable.", "Tickets lus et dépenses classées pour vous."],
+        ["no", "Service en magasin", "Les clients viennent pour nos conseils.", "Vos équipes font l’expérience. Gardez-la ainsi."],
+      ],
+      trades: [
+        ["fit", "Devis", "J’écris mes devis sur la table de la cuisine, le soir.", "Devis construits à partir de vos notes de chantier et de vos photos."],
+        ["fit", "Factures et relances", "Relancer les paiements est un deuxième métier.", "Relances automatiques, et paiements rapprochés des factures."],
+        ["test", "Planning des chantiers", "Chaque lundi, le planning est un casse-tête.", "Itinéraires et plannings d’équipe suggérés pour la semaine."],
+        ["test", "Paperasse de sécurité", "Les évaluations de risques ralentissent chaque nouveau chantier.", "Formulaires pré-remplis, à vérifier et à signer."],
+        ["no", "Le travail sur le chantier", "Le travail lui-même demande des mains expertes.", "Pas de raccourci ici, et c’est très bien."],
+      ],
+      solo: [
+        ["fit", "E-mails et administratif", "Ma boîte mail dicte ma journée.", "Brouillons de réponses, et les messages qui ont besoin de vous remontés en tête."],
+        ["fit", "Publications sur les réseaux", "Je sais que je devrais publier, mais je n’ai jamais le temps.", "Un mois d’idées et de brouillons de publications, dans votre voix."],
+        ["test", "Facturation et comptabilité", "Je fais la compta le dimanche soir.", "Tickets lus et factures préparées, à vous de vérifier."],
+        ["test", "Propositions et devis", "Chaque proposition commence sur une page blanche.", "Premiers jets à partir de vos notes et de vos réalisations passées."],
+        ["no", "Votre relation client", "Les clients achètent chez moi, pas chez un système.", "Gardez ça personnel. C’est votre atout."],
+      ],
+      hospitality: [
+        ["fit", "Réservations et demandes", "Le téléphone sonne pendant le coup de feu du dîner.", "Réponses aux questions courantes à toute heure."],
+        ["fit", "Réponses aux avis", "On ne trouve jamais le temps de répondre aux avis.", "Réponses rédigées dans votre voix."],
+        ["test", "Planning du personnel", "On manque de personnel pile quand ça déborde.", "Suggestions de plannings d’après les périodes de forte affluence passées."],
+        ["test", "Approvisionnement", "On jette trop de nourriture.", "Suggestions de commandes qui réduisent le gaspillage."],
+        ["no", "Accueillir les clients", "Les clients reviennent pour les gens.", "Gardez ça humain."],
+      ],
+    };
+    const label = { fit: "Bien adapté", test: "À tester", no: "Pas encore" };
+    const map = document.getElementById('map');
+    function render(key) {
+      map.innerHTML = data[key].map(([lvl, area, pain, help]) => `
+        <li class="row flex items-start gap-4 py-3.5">
+          <span class="m m-${lvl} mt-[.4rem]" role="img" aria-label="${label[lvl]}"></span>
+          <div class="min-w-0 flex-1">
+            <div class="flex items-baseline justify-between gap-3">
+              <p class="font-semibold leading-snug ${lvl === 'no' ? 'text-slate' : 'text-ink'}">${area}</p>
+              <span class="hidden sm:block shrink-0 text-xs font-semibold ${lvl === 'no' ? 'text-slate' : 'text-teal-deep'}">${label[lvl]}</span>
+            </div>
+            <p class="mt-0.5 text-[0.95rem] leading-snug text-ink/75">« ${pain} »</p>
+            <p class="mt-1 text-sm leading-snug text-slate"><span class="font-semibold ${lvl === 'no' ? 'text-slate' : 'text-teal-deep'}">${lvl === 'no' ? 'Notre avis :' : 'Avec l’IA :'}</span> ${help}</p>
+          </div>
+        </li>`).join('');
+      [...map.children].forEach((li, i) => setTimeout(() => li.classList.add('on'), 90 * i + 40));
+    }
+    document.querySelectorAll('.tab').forEach(t => t.addEventListener('click', () => {
+      document.querySelectorAll('.tab').forEach(o => o.setAttribute('aria-selected', o === t));
+      render(t.dataset.s);
+    }));
+    render('services');
+
+    // Signal rings
+    (() => {
+      const hero = document.querySelector('.hero-bg');
+      const wrap = hero.querySelector('.rings');
+      const card = document.getElementById('mapCard');
+      const N = 5, PERIOD = 15000, MAXR = 900;
+      const rings = Array.from({ length: N }, () => wrap.appendChild(Object.assign(document.createElement('div'), { className: 'ring' })));
+      const prev = new Array(N).fill(0);
+      const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+      let o = { x: 0, y: 0 };
+
+      function locate() {
+        const h = hero.getBoundingClientRect(), c = card.getBoundingClientRect();
+        o = { x: c.left - h.left + c.width / 2, y: c.top - h.top + c.height / 2 };
+        wrap.style.transform = `translate(${o.x}px, ${o.y}px)`;
+        return h;
+      }
+      function draw(p, i) {
+        const s = 0.06 + 0.94 * p;
+        const op = Math.min(p / 0.08, 1) * Math.pow(1 - p, 1.5);
+        rings[i].style.transform = `scale(${s})`;
+        rings[i].style.opacity = op.toFixed(3);
+        return { r: s * MAXR, op };
+      }
+      if (reduce) { locate(); rings.forEach((_, i) => draw(0.12 + i * 0.16, i)); addEventListener('resize', locate); return; }
+
+      let running = true, raf = 0;
+      function frame(t) {
+        const h = locate();
+        const dots = [...document.querySelectorAll('#map .row.on .m-fit')].map(d => {
+          const b = d.getBoundingClientRect();
+          return { d, dist: Math.hypot(b.left - h.left + b.width / 2 - o.x, b.top - h.top + b.height / 2 - o.y) };
+        });
+        for (let i = 0; i < N; i++) {
+          const { r, op } = draw(((t / PERIOD) + i / N) % 1, i);
+          if (r > prev[i] && op > 0.15) dots.forEach(({ d, dist }) => {
+            if (dist > prev[i] && dist <= r) { d.classList.remove('ping'); void d.offsetWidth; d.classList.add('ping'); }
+          });
+          prev[i] = r;
+        }
+        raf = requestAnimationFrame(frame);
+      }
+      function setRunning(on) { if (on && !running) { running = true; raf = requestAnimationFrame(frame); } else if (!on && running) { running = false; cancelAnimationFrame(raf); } }
+      new IntersectionObserver(([e]) => setRunning(e.isIntersecting && !document.hidden)).observe(hero);
+      document.addEventListener('visibilitychange', () => setRunning(!document.hidden));
+      raf = requestAnimationFrame(frame);
+    })();
+  </script>
+</body>
+</html>
